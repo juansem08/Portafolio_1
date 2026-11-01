@@ -271,5 +271,3 @@ export default function Hero() {
     </section>
   );
 }
-
-/* tactile_build_step_2_4n0qk */
