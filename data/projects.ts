@@ -40,5 +40,3 @@ export const projects: Project[] = [
     demo: "https://proyecto-lumen.vercel.app",
   },
 ];
-
-/* tactile_build_step_7_7swtur */
