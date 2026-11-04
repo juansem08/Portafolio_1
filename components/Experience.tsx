@@ -143,5 +143,3 @@ export default function Experience() {
     </section>
   );
 }
-
-/* tactile_build_step_11_3iy6gm */
