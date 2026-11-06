@@ -288,5 +288,3 @@ export default function Contact() {
     </section>
   );
 }
-
-/* tactile_build_step_20_u8247a */
