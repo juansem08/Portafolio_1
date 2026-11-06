@@ -128,5 +128,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-/* tactile_build_step_22_bqq88 */
