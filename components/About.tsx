@@ -188,5 +188,3 @@ export default function About() {
     </section>
   );
 }
-
-/* tactile_build_step_32_0griyc */
