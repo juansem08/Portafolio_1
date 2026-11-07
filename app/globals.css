@@ -19,11 +19,21 @@ html {
   color-scheme: light;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 body {
   color: #1B1717;
   background-color: #EDEBDD;
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  color: #EDEBDD;
+  background-color: #121010;
 }
 
 /* Custom Scrollbar for Scrapbook Cotton Mode */
@@ -34,6 +44,11 @@ body {
 ::-webkit-scrollbar-track {
   background: #EDEBDD;
   border-left: 1px dashed rgba(27, 23, 23, 0.2);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1B1717;
+  border-left: 1px dashed rgba(237, 235, 221, 0.2);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -53,6 +68,16 @@ body {
     linear-gradient(to bottom, rgba(27, 23, 23, 0.055) 1px, transparent 1px),
     linear-gradient(to right, rgba(129, 1, 0, 0.08) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(129, 1, 0, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px;
+}
+
+.dark .bg-cutting-mat {
+  background-color: #121010;
+  background-image: 
+    linear-gradient(to right, rgba(237, 235, 221, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 235, 221, 0.045) 1px, transparent 1px),
+    linear-gradient(to right, rgba(220, 38, 38, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(220, 38, 38, 0.08) 1px, transparent 1px);
   background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px;
 }
 
