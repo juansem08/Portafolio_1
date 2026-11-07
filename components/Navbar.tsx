@@ -20,11 +20,11 @@ export default function Navbar() {
   const navLinks = [
     { label: "Sobre Mí", href: "#about", rot: "-rotate-1" },
     { label: "Proyectos", href: "#projects", rot: "rotate-1" },
-    { label: "Testimonios", href: "#testimonials", rot: "-rotate-2" },
-    { label: "Experiencia", href: "#experience", rot: "rotate-1" },
-    { label: "Visitas", href: "#visits", rot: "rotate-2" },
-    { label: "Stack & Lenguajes", href: "#workspace", rot: "-rotate-1" },
+    { label: "Experiencia", href: "#experience", rot: "-rotate-1" },
+    { label: "Testimonios", href: "#testimonials", rot: "rotate-2" },
+    { label: "Stack & Lenguajes", href: "#workspace", rot: "-rotate-2" },
     { label: "Contacto", href: "#contact", rot: "rotate-1" },
+    { label: "Visitas", href: "#visits", rot: "-rotate-1" },
   ];
 
   return (

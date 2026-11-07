@@ -27,7 +27,7 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="flex flex-col items-start mb-12">
           <div className="mb-2">
-            <Tape variant="warning">// 03. REFERENCIAS &amp; TESTIMONIOS</Tape>
+            <Tape variant="warning">// 04. REFERENCIAS &amp; TESTIMONIOS</Tape>
           </div>
           <h2 className="text-3xl sm:text-5xl font-display font-black text-[#1B1717] tracking-tight uppercase">
             TESTIMONIOS

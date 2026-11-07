@@ -48,7 +48,7 @@ export default function Experience() {
         {/* Section Header */}
         <div className="flex flex-col items-start mb-14">
           <div className="mb-2">
-            <Tape variant="warning">// 04. REGISTRO CRONOLÓGICO &amp; TRAYECTORIA</Tape>
+            <Tape variant="warning">// 03. REGISTRO CRONOLÓGICO &amp; TRAYECTORIA</Tape>
           </div>
           <h2 className="text-3xl sm:text-5xl font-display font-black text-[#1B1717] tracking-tight uppercase">
             EXPERIENCIA &amp; FORMACIÓN

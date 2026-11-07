@@ -50,7 +50,7 @@ export default function Contact() {
         {/* Section Header */}
         <div className="flex flex-col items-start mb-12">
           <div className="mb-2">
-            <Tape variant="warning">// 05. CANAL DE DESPACHO &amp; TELEGRAMA</Tape>
+            <Tape variant="warning">// 06. CANAL DE DESPACHO &amp; TELEGRAMA</Tape>
           </div>
           <h2 className="text-3xl sm:text-5xl font-display font-black text-[#1B1717] tracking-tight uppercase">
             CONTACTO DIRECTO

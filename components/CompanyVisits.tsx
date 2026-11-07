@@ -135,7 +135,7 @@ export default function CompanyVisits() {
         {/* Section Header */}
         <div className="flex flex-col items-start mb-14">
           <div className="mb-2">
-            <Tape variant="warning">// 05. INMERSIÓN INDUSTRIAL &amp; EMPRESAS</Tape>
+            <Tape variant="warning">// 07. ANEXO EXTRA // INMERSIÓN INDUSTRIAL &amp; VISITAS EMPRESARIALES</Tape>
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between w-full gap-4">
             <div>
@@ -316,3 +316,4 @@ export default function CompanyVisits() {
     </section>
   );
 }
+
