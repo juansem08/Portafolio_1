@@ -61,5 +61,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-/* tactile_build_step_31_x11jk */
