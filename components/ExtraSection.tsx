@@ -322,5 +322,3 @@ export default function ExtraSection() {
     </section>
   );
 }
-
-/* tactile_build_step_33_sdl7rif */
