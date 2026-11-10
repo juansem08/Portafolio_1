@@ -119,9 +119,22 @@ export const translations = {
       subtitle: "Tarjetas de archivo técnico que documentan mi recorrido en desarrollo de arquitectura limpia, proyectos de ingeniería y formación académica.",
       workBadge: "FICHA // LABORAL",
       academicBadge: "FICHA // ACADÉMICA",
+      workHeading: "💼 EXPERIENCIA LABORAL",
+      academicHeading: "🎓 EXPERIENCIA ACADÉMICA",
       orgPrefix: "ORG:",
       items: [
         {
+          type: "laboral",
+          title: "Desarrollador Web Full-Stack",
+          organization: "Calibración y Reparación — AutoRepuestos",
+          period: "Jul 2026",
+          description: "Desarrollo del MVP web para un taller de calibración y reparación automotriz: catálogo de repuestos con filtros por categoría, consulta de precios y disponibilidad, y agendamiento de citas por WhatsApp. Base preparada para conectar Supabase (productos, stock, clientes y citas).",
+          badges: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+          github: "https://github.com/Sebas082/Calibracion_Reparacion",
+          demo: "https://calibracion-reparacion.vercel.app",
+        },
+        {
+          type: "laboral",
           title: "Desarrollador y Arquitecto",
           organization: "VisualPart",
           period: "2026",
@@ -129,6 +142,7 @@ export const translations = {
           badges: ["Arquitectura de Software", "Next.js", "Lead Tech", "E-commerce"],
         },
         {
+          type: "academica",
           title: "Ingeniería de Software",
           organization: "Universidad Cooperativa de Colombia",
           period: "En Proceso (Pregrado)",
@@ -136,6 +150,7 @@ export const translations = {
           badges: ["Clean Architecture", "Arquitectura de Software", "Bases de Datos", "QA"],
         },
         {
+          type: "academica",
           title: "Técnico en Sistemas",
           organization: "SENA (Servicio Nacional de Aprendizaje)",
           period: "Titulada // Certificado (Ficha 2492764)",
@@ -394,9 +409,22 @@ export const translations = {
       subtitle: "Technical index cards documenting my journey through clean architecture development, engineering projects, and academic background.",
       workBadge: "RECORD // PROFESSIONAL",
       academicBadge: "RECORD // ACADEMIC",
+      workHeading: "💼 WORK EXPERIENCE",
+      academicHeading: "🎓 ACADEMIC BACKGROUND",
       orgPrefix: "ORG:",
       items: [
         {
+          type: "laboral",
+          title: "Full-Stack Web Developer",
+          organization: "Calibración y Reparación — AutoRepuestos",
+          period: "Jul 2026",
+          description: "Built the web MVP for an automotive calibration and repair shop: auto parts catalog with category filters, price and availability lookup, and appointment booking via WhatsApp. Ready to connect Supabase (products, stock, customers and appointments).",
+          badges: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+          github: "https://github.com/Sebas082/Calibracion_Reparacion",
+          demo: "https://calibracion-reparacion.vercel.app",
+        },
+        {
+          type: "laboral",
           title: "Developer & Architect",
           organization: "VisualPart",
           period: "2026",
@@ -404,6 +432,7 @@ export const translations = {
           badges: ["Software Architecture", "Next.js", "Lead Tech", "E-commerce"],
         },
         {
+          type: "academica",
           title: "Software Engineering",
           organization: "Universidad Cooperativa de Colombia",
           period: "In Progress (Undergrad)",
@@ -411,6 +440,7 @@ export const translations = {
           badges: ["Clean Architecture", "Software Architecture", "Databases", "QA"],
         },
         {
+          type: "academica",
           title: "Systems Technician",
           organization: "SENA (National Training Service)",
           period: "Certified Graduate (Ficha 2492764)",
