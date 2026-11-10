@@ -1,7 +1,7 @@
 "use client";
 
 import { projects } from "@/data/projects";
-import { Github, ExternalLink, Layers } from "lucide-react";
+import { Github, ExternalLink, Layers, Lock, Clock } from "lucide-react";
 import { Tape, Paperclip, Pushpin } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
 
@@ -85,8 +85,12 @@ export default function Projects() {
                       </div>
 
                       <div className="flex items-center gap-1.5 px-2.5 py-0.5 bg-[#EDEBDD] dark:bg-[#121010] border border-[#1B1717] dark:border-[#810100] text-[10px] font-mono font-bold text-[#1B1717] dark:text-[#EDEBDD] shadow-sm">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-                        <span>{t("projects.statusLive")}</span>
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full ${
+                            project.demo ? "bg-emerald-600 animate-pulse" : "bg-amber-500"
+                          }`}
+                        />
+                        <span>{project.demo ? t("projects.statusLive") : t("projects.statusDev")}</span>
                       </div>
                     </div>
 
@@ -122,25 +126,39 @@ export default function Projects() {
 
                     {/* Actions: GitHub Repos & Live Demo */}
                     <div className="flex items-center justify-between gap-3 pt-4 border-t-2 border-dashed border-[#1B1717]/20 dark:border-[#EDEBDD]/20">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#1B1717] text-[#EDEBDD] hover:bg-[#332D2D] dark:bg-[#252020] dark:hover:bg-[#383030] text-xs font-mono font-bold border border-[#1B1717] dark:border-[#810100] shadow-[3px_3px_0px_#810100] transition-all hover:scale-105 active:scale-95"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>{t("projects.btnCode")}</span>
-                      </a>
+                      {project.github ? (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#1B1717] text-[#EDEBDD] hover:bg-[#332D2D] dark:bg-[#252020] dark:hover:bg-[#383030] text-xs font-mono font-bold border border-[#1B1717] dark:border-[#810100] shadow-[3px_3px_0px_#810100] transition-all hover:scale-105 active:scale-95"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                          <span>{t("projects.btnCode")}</span>
+                        </a>
+                      ) : (
+                        <span className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-mono font-bold text-neutral-500 dark:text-neutral-400 border-2 border-dashed border-[#1B1717]/40 dark:border-[#EDEBDD]/30 cursor-not-allowed">
+                          <Lock className="w-3.5 h-3.5" />
+                          <span>{t("projects.codePrivate")}</span>
+                        </span>
+                      )}
 
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#810100] text-[#EDEBDD] hover:bg-[#9E0201] text-xs font-display font-black tracking-wide border-2 border-[#1B1717] dark:border-[#EDEBDD]/40 shadow-[3px_3px_0px_#1B1717] dark:shadow-[3px_3px_0px_#810100] transition-all hover:scale-105 active:scale-95"
-                      >
-                        <span>{t("projects.btnDemo")}</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
+                      {project.demo ? (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#810100] text-[#EDEBDD] hover:bg-[#9E0201] text-xs font-display font-black tracking-wide border-2 border-[#1B1717] dark:border-[#EDEBDD]/40 shadow-[3px_3px_0px_#1B1717] dark:shadow-[3px_3px_0px_#810100] transition-all hover:scale-105 active:scale-95"
+                        >
+                          <span>{t("projects.btnDemo")}</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      ) : (
+                        <span className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-mono font-bold text-neutral-500 dark:text-neutral-400 border-2 border-dashed border-[#1B1717]/40 dark:border-[#EDEBDD]/30 cursor-not-allowed">
+                          <Clock className="w-3.5 h-3.5" />
+                          <span>{t("projects.demoSoon")}</span>
+                        </span>
+                      )}
                     </div>
                   </div>
 

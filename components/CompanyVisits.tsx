@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Building2, MapPin, Sparkles, Camera } from "lucide-react";
 import { Tape, Pushpin, Paperclip } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
@@ -297,11 +298,12 @@ export default function CompanyVisits() {
 
                             {/* Image Container with Polaroid ratio */}
                             <div className="w-full aspect-[4/3] bg-neutral-900 border border-[#1B1717]/30 dark:border-[#EDEBDD]/20 overflow-hidden relative">
-                              <img
+                              <Image
                                 src={img.src}
                                 alt={img.caption}
-                                loading="lazy"
-                                className="w-full h-full object-cover group-hover/photo:scale-105 transition-transform duration-500 filter contrast-[1.02]"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover group-hover/photo:scale-105 transition-transform duration-500 filter contrast-[1.02]"
                               />
                               <div className="absolute bottom-1 right-1 bg-[#1B1717]/80 text-[#EDEBDD] px-1.5 py-0.5 text-[9px] font-mono flex items-center gap-1">
                                 <Camera className="w-2.5 h-2.5" />

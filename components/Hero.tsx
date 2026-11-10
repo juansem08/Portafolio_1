@@ -1,14 +1,14 @@
 "use client";
 
 import { Download, Terminal, ShieldCheck, Layers, Sparkles, Cpu } from "lucide-react";
-import { Tape, BadgeClip, Pushpin, MarkerScratch, Barcode } from "./ScrapbookAssets";
+import { Tape, BadgeClip, Pushpin, DoodleArrow, MarkerScratch, Barcode } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
 
 export default function Hero() {
   const { t } = useApp();
 
   return (
-    <section className="relative pt-8 pb-20 md:pt-14 md:pb-28 overflow-hidden select-none">
+    <section id="inicio" className="relative pt-8 pb-20 md:pt-14 md:pb-28 overflow-hidden select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Bento / Scrapbook Collage Container */}
@@ -158,7 +158,7 @@ export default function Hero() {
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-white/80 rotate-45 pointer-events-none" />
               </a>
 
-              {/* "Ver proyectos" button */}
+              {/* "Ver proyectos ->" with Hand-drawn SVG doodle arrow in Cherry Red */}
               <div className="flex items-center gap-3 relative">
                 <a
                   href="#projects"
@@ -167,6 +167,11 @@ export default function Hero() {
                   <span>{t("hero.viewProjects")}</span>
                   <span className="text-[#810100] dark:text-[#ff4444] font-bold">&darr;</span>
                 </a>
+                
+                {/* Doodle arrow pointing down */}
+                <div className="hidden sm:block -mb-6 pointer-events-none">
+                  <DoodleArrow color="#810100" className="rotate-12" />
+                </div>
               </div>
             </div>
           </div>

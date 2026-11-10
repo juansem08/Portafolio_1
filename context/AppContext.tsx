@@ -19,6 +19,7 @@ export const translations = {
   es: {
     // Navbar
     nav: {
+      home: "Inicio",
       about: "Sobre Mí",
       projects: "Proyectos",
       experience: "Experiencia",
@@ -83,12 +84,15 @@ export const translations = {
       sectionTape: "// 02. PORTAFOLIO DE DESARROLLO & CÓDIGO",
       title: "PROYECTOS DESTACADOS",
       subtitle: "Soluciones de software completas, arquitecturas desacopladas y plataformas web en producción con código abierto.",
-      badgeCount: "4 PROYECTOS // EN PRODUCCIÓN",
+      badgeCount: "4 PROYECTOS // PORTAFOLIO",
       softwareModule: "SOFTWARE MODULE",
       statusLive: "LIVE / DEPLOYED",
+      statusDev: "EN DESARROLLO",
       techStackTitle: "TECNOLOGÍAS / STACK:",
       btnCode: "VER CÓDIGO",
       btnDemo: "DEMO EN VIVO",
+      codePrivate: "CÓDIGO PRIVADO",
+      demoSoon: "DEMO PRÓXIMAMENTE",
       items: [
         {
           title: "Gridmind",
@@ -251,10 +255,13 @@ export const translations = {
       whatsappSub: "Mensaje directo",
       whatsappAction: "CHATEAR →",
       githubAction: "IR →",
+      linkedinAction: "CONECTAR →",
       airMailStamp: "AIR-MAIL // PASTO NAR POSTAL SERVICE",
       dispatchTitle: "FORMATO DE DESPACHO // TELEGRAMA",
       priorityBadge: "PRIORIDAD ALTA",
       successMsg: "¡Telegrama transmitido con éxito! Responderé a la brevedad posible.",
+      mailtoMsg: "Se abrió tu aplicación de correo con el mensaje listo. Solo dale enviar.",
+      errorMsg: "No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directo al correo.",
       senderNameLabel: "Nombre del Remitente:",
       senderNamePlaceholder: "Ej. Ada Lovelace",
       emailReturnLabel: "Dirección de Retorno (Email):",
@@ -276,7 +283,9 @@ export const translations = {
     },
     // Footer
     footer: {
-      copyright: "© 2026 Sebastián. Todos los derechos reservados.",
+      copyright: "Sebastián. Todos los derechos reservados.",
+      quickLinks: "ENLACES RÁPIDOS",
+      madeWith: "Hecho con Next.js + Tailwind CSS",
       backToTop: "SUBIR",
       techSubline: "COTTON & NOIR PALETTE // TACTILE SCRAPBOOK • NEXT.JS 14 • TAILWIND CSS",
       locationCleanArch: "PASTO, COLOMBIA • ARQUITECTURA LIMPIA",
@@ -285,6 +294,7 @@ export const translations = {
   en: {
     // Navbar
     nav: {
+      home: "Home",
       about: "About Me",
       projects: "Projects",
       experience: "Experience",
@@ -349,12 +359,15 @@ export const translations = {
       sectionTape: "// 02. CODE PORTFOLIO & DEVELOPMENT",
       title: "FEATURED PROJECTS",
       subtitle: "Complete software solutions, decoupled architectures, and production-ready web platforms with open source code.",
-      badgeCount: "4 PROJECTS // IN PRODUCTION",
+      badgeCount: "4 PROJECTS // PORTFOLIO",
       softwareModule: "SOFTWARE MODULE",
       statusLive: "LIVE / DEPLOYED",
+      statusDev: "IN DEVELOPMENT",
       techStackTitle: "TECH STACK / MODULES:",
       btnCode: "VIEW CODE",
       btnDemo: "LIVE DEMO",
+      codePrivate: "PRIVATE CODE",
+      demoSoon: "DEMO COMING SOON",
       items: [
         {
           title: "Gridmind",
@@ -517,10 +530,13 @@ export const translations = {
       whatsappSub: "Direct message",
       whatsappAction: "CHAT NOW →",
       githubAction: "VISIT →",
+      linkedinAction: "CONNECT →",
       airMailStamp: "AIR-MAIL // PASTO NAR POSTAL SERVICE",
       dispatchTitle: "DISPATCH FORM // TELEGRAM",
       priorityBadge: "HIGH PRIORITY",
       successMsg: "Telegram transmitted successfully! I will reply as soon as possible.",
+      mailtoMsg: "Your email app opened with the message ready. Just hit send.",
+      errorMsg: "The message could not be sent. Please try again or email me directly.",
       senderNameLabel: "Sender's Name:",
       senderNamePlaceholder: "e.g. Ada Lovelace",
       emailReturnLabel: "Return Address (Email):",
@@ -542,7 +558,9 @@ export const translations = {
     },
     // Footer
     footer: {
-      copyright: "© 2026 Sebastián. All rights reserved.",
+      copyright: "Sebastián. All rights reserved.",
+      quickLinks: "QUICK LINKS",
+      madeWith: "Made with Next.js + Tailwind CSS",
       backToTop: "BACK TO TOP",
       techSubline: "COTTON & NOIR PALETTE // TACTILE SCRAPBOOK • NEXT.JS 14 • TAILWIND CSS",
       locationCleanArch: "PASTO, COLOMBIA • CLEAN ARCHITECTURE",

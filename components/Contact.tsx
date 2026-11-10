@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Github, Send, CheckCircle2, MessageSquare, Terminal, Copy, Check } from "lucide-react";
+import { Mail, Github, Linkedin, Send, CheckCircle2, AlertTriangle, MessageSquare, Terminal, Copy, Check } from "lucide-react";
 import { Tape, Paperclip, Pushpin, WhatsAppIcon } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
+import { contactInfo, whatsappUrl } from "@/data/contact";
+
+// ID del formulario de Formspree (formspree.io). Se configura como variable de entorno
+// NEXT_PUBLIC_FORMSPREE_ID en Vercel. Si no existe, el formulario abre el correo del visitante.
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+
+type FormStatus = "idle" | "sending" | "success" | "mailto" | "error";
 
 export default function Contact() {
   const { t } = useApp();
@@ -13,11 +20,11 @@ export default function Contact() {
     email: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [status, setStatus] = useState<FormStatus>("idle");
   const [copied, setCopied] = useState(false);
 
-  const emailAddress = "jsmayorgaj2008@gmail.com";
+  const emailAddress = contactInfo.email;
+  const isSubmitting = status === "sending";
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -28,16 +35,38 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  const finish = (result: "success" | "mailto") => {
+    setStatus(result);
+    setFormData({ name: "", email: "", message: "" });
+    setTimeout(() => setStatus("idle"), 6000);
+  };
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 900);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    // Sin Formspree configurado: abre el cliente de correo con el mensaje ya escrito.
+    if (!FORMSPREE_ID) {
+      const subject = encodeURIComponent(`Mensaje desde el portafolio - ${formData.name}`);
+      const body = encodeURIComponent(
+        `${formData.message}\n\n— ${formData.name} (${formData.email})`
+      );
+      window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+      finish("mailto");
+      return;
+    }
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error(`Formspree respondió ${res.status}`);
+      finish("success");
+    } catch {
+      setStatus("error");
+    }
   };
 
   const handleCopyEmail = () => {
@@ -118,7 +147,7 @@ export default function Contact() {
                 <div className="space-y-3">
                   {/* GitHub */}
                   <a
-                    href="https://github.com/juansem08"
+                    href={contactInfo.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between p-3.5 bg-[#FAF9F5] dark:bg-[#121010] border-2 border-[#1B1717] dark:border-[#810100] hover:bg-[#EDEBDD] dark:hover:bg-[#252020] transition-all duration-200 group shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100]"
@@ -132,7 +161,7 @@ export default function Contact() {
                           GitHub
                         </div>
                         <div className="text-xs font-mono text-neutral-600 dark:text-neutral-400">
-                          @juansem08
+                          {contactInfo.githubUser}
                         </div>
                       </div>
                     </div>
@@ -141,9 +170,39 @@ export default function Contact() {
                     </span>
                   </a>
 
+                  {/* LinkedIn */}
+                  {contactInfo.linkedin && (
+                    <a
+                      href={contactInfo.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between p-3.5 bg-[#FAF9F5] dark:bg-[#121010] border-2 border-[#1B1717] dark:border-[#810100] hover:bg-[#EDEBDD] dark:hover:bg-[#252020] transition-all duration-200 group shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100]"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 bg-[#0A66C2] text-white border border-[#1B1717] flex items-center justify-center shadow-[2px_2px_0px_#1B1717]">
+                          <Linkedin className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <div className="text-sm font-black text-[#1B1717] dark:text-[#EDEBDD] group-hover:text-[#810100] dark:group-hover:text-[#E8927C] font-mono">
+                            LinkedIn
+                          </div>
+                          {contactInfo.linkedinUser && (
+                            <div className="text-xs font-mono text-neutral-600 dark:text-neutral-400">
+                              {contactInfo.linkedinUser}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <span className="text-xs font-mono font-black text-[#810100] dark:text-[#E8927C]">
+                        {t("contact.linkedinAction")}
+                      </span>
+                    </a>
+                  )}
+
                   {/* WhatsApp */}
+                  {whatsappUrl && (
                   <a
-                    href="https://wa.me/?text=Hola%20Sebasti%C3%A1n,%20vi%20tu%20portafolio"
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between p-3.5 bg-[#FAF9F5] dark:bg-[#121010] border-2 border-[#1B1717] dark:border-[#810100] hover:bg-[#EDEBDD] dark:hover:bg-[#252020] transition-all duration-200 group shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100]"
@@ -165,6 +224,7 @@ export default function Contact() {
                       {t("contact.whatsappAction")}
                     </span>
                   </a>
+                  )}
                 </div>
               </div>
 
@@ -196,10 +256,23 @@ export default function Contact() {
                 </span>
               </div>
 
-              {isSuccess && (
-                <div className="mb-6 p-4 bg-[#EDEBDD] dark:bg-[#121010] border-2 border-[#810100] text-[#810100] dark:text-[#EDEBDD] text-xs font-mono flex items-center gap-3 shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100] font-bold">
+              {(status === "success" || status === "mailto") && (
+                <div
+                  role="status"
+                  className="mb-6 p-4 bg-[#EDEBDD] dark:bg-[#121010] border-2 border-[#810100] text-[#810100] dark:text-[#EDEBDD] text-xs font-mono flex items-center gap-3 shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100] font-bold"
+                >
                   <CheckCircle2 className="w-5 h-5 shrink-0 text-[#810100] dark:text-emerald-400" />
-                  <span>{t("contact.successMsg")}</span>
+                  <span>{status === "success" ? t("contact.successMsg") : t("contact.mailtoMsg")}</span>
+                </div>
+              )}
+
+              {status === "error" && (
+                <div
+                  role="alert"
+                  className="mb-6 p-4 bg-[#EDEBDD] dark:bg-[#121010] border-2 border-dashed border-[#810100] text-[#810100] dark:text-[#EDEBDD] text-xs font-mono flex items-center gap-3 shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100] font-bold"
+                >
+                  <AlertTriangle className="w-5 h-5 shrink-0 text-[#810100] dark:text-amber-400" />
+                  <span>{t("contact.errorMsg")}</span>
                 </div>
               )}
 
