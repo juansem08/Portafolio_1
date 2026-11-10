@@ -1,7 +1,7 @@
 "use client";
 
 import { Download, Terminal, ShieldCheck, Layers, Sparkles, Cpu } from "lucide-react";
-import { Tape, BadgeClip, Pushpin, DoodleArrow, MarkerScratch, Barcode } from "./ScrapbookAssets";
+import { Tape, BadgeClip, Pushpin, MarkerScratch, Barcode } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
 
 export default function Hero() {
@@ -158,7 +158,7 @@ export default function Hero() {
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-white/80 rotate-45 pointer-events-none" />
               </a>
 
-              {/* "Ver proyectos ->" with Hand-drawn SVG doodle arrow in Cherry Red */}
+              {/* "Ver proyectos" button */}
               <div className="flex items-center gap-3 relative">
                 <a
                   href="#projects"
@@ -167,11 +167,6 @@ export default function Hero() {
                   <span>{t("hero.viewProjects")}</span>
                   <span className="text-[#810100] dark:text-[#ff4444] font-bold">&darr;</span>
                 </a>
-                
-                {/* Doodle arrow pointing down */}
-                <div className="hidden sm:block -mb-6 pointer-events-none">
-                  <DoodleArrow color="#810100" className="rotate-12" />
-                </div>
               </div>
             </div>
           </div>
