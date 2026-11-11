@@ -29,19 +29,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "AutoRepuestos — Calibración y Reparación",
-    category: { es: "Web · Taller automotriz", en: "Web · Auto repair shop" },
-    description: {
-      es: "Sitio web para un taller de calibración y reparación automotriz: catálogo de repuestos con página de detalle por producto, formulario de agendamiento de citas con su propia ruta de API, contacto directo por WhatsApp y esquema de base de datos en Supabase.",
-      en: "Website for an automotive calibration and repair shop: auto parts catalog with a detail page per product, appointment booking form with its own API route, direct WhatsApp contact and a Supabase database schema.",
-    },
-    tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Supabase"],
-    icon: "wrench",
-    image: "/images/projects/autorepuestos.svg",
-    repos: [{ label: "Código", url: "https://github.com/Sebas082/Calibracion_Reparacion" }],
-    demo: "https://calibracion-reparacion.vercel.app",
-  },
-  {
     title: "Clarify — Escáner de Documentos con IA",
     category: { es: "App móvil · IA", en: "Mobile app · AI" },
     description: {
