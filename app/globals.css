@@ -136,6 +136,62 @@ body {
       -2px 0 rgba(94, 231, 255, 0.45);
   }
 
+  /* Pared de baldosas sucias con luz verdosa */
+  .wall-tiles {
+    background-color: #1a221d;
+    background-image:
+      radial-gradient(ellipse at 50% -10%, rgba(214, 245, 200, 0.18), transparent 60%),
+      linear-gradient(rgba(0, 0, 0, 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.35) 1px, transparent 1px),
+      linear-gradient(180deg, #24302a 0%, #18201b 100%);
+    background-size: 100% 100%, 44px 30px, 44px 30px, 100% 100%;
+  }
+
+  /* Franja de piso a cuadros entre secciones */
+  .checker-band {
+    height: 28px;
+    background-color: #0c0f0d;
+    background-image: conic-gradient(#c9cfc6 25%, #0c0f0d 0 50%, #c9cfc6 0 75%, #0c0f0d 0);
+    background-size: 28px 28px;
+    opacity: 0.85;
+    box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.7), inset 0 -6px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Papel envejecido (periódico, expedientes, pósters) */
+  .paper {
+    position: relative;
+    color: #1c1a16;
+    background-color: #e8e2cf;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(255, 255, 255, 0.35), transparent 50%),
+      radial-gradient(ellipse at 90% 100%, rgba(120, 95, 50, 0.25), transparent 55%),
+      var(--noise);
+    background-blend-mode: normal, normal, multiply;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Cinta adhesiva */
+  .tape {
+    position: absolute;
+    width: 90px;
+    height: 26px;
+    background: rgba(230, 225, 190, 0.55);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+  }
+
+  /* Sello de goma */
+  .stamp {
+    font-family: var(--font-typewriter), monospace;
+    text-transform: uppercase;
+    color: #b3261e;
+    border: 3px solid #b3261e;
+    padding: 2px 10px;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+    mix-blend-mode: multiply;
+  }
+
   /* Botón de monitor */
   .cam-btn {
     font-family: var(--font-retro), monospace;
@@ -183,6 +239,23 @@ body {
   60% { opacity: 1; }
   100% { transform: scale(1.15); opacity: 1; }
 }
+@keyframes bulb {
+  0%, 100% { opacity: 1; }
+  41% { opacity: 1; }
+  42% { opacity: 0.35; }
+  43% { opacity: 1; }
+  77% { opacity: 1; }
+  78% { opacity: 0.55; }
+  80% { opacity: 1; }
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+@keyframes led {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.15; }
+}
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -194,12 +267,18 @@ body {
 .animate-jitter { animation: jitter 0.35s steps(2) infinite; }
 .animate-creep { animation: creep 1.4s ease-in forwards; }
 .animate-fade { animation: fade-in 300ms ease-out both; }
+.animate-bulb { animation: bulb 5s linear infinite; }
+.animate-sway { animation: sway 6s ease-in-out infinite; transform-origin: top center; }
+.animate-led { animation: led 1.4s steps(2) infinite; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .noise::after,
   .animate-rec,
   .animate-flicker,
-  .animate-jitter { animation: none; }
+  .animate-jitter,
+  .animate-bulb,
+  .animate-sway,
+  .animate-led { animation: none; }
   .animate-creep { animation-duration: 1ms; }
 }

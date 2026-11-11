@@ -29,6 +29,8 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         retro: ["var(--font-retro)", "monospace"],
+        typewriter: ["var(--font-typewriter)", "monospace"],
+        news: ["var(--font-news)", "Georgia", "serif"],
       },
     },
   },

@@ -25,12 +25,27 @@ export default function Projects() {
               {/* Toma de cámara del proyecto */}
               <div className="screen scanlines vignette aspect-[16/8] border-b border-edge">
                 <div aria-hidden className="cam-corners" />
+                {/* Pantalla CRT de 8 bits: fondo, confeti y bombillos de colores */}
                 <div
                   aria-hidden
                   className="absolute inset-0"
-                  style={{ background: "radial-gradient(ellipse at 50% 55%, #222b26 0%, #090d0b 60%, #050706 90%)" }}
+                  style={{
+                    background: `radial-gradient(circle at 20% 70%, #ff3b3b 0 1.5px, transparent 2px) 0 0/34px 26px,
+                      radial-gradient(circle at 70% 30%, #ffb000 0 1.5px, transparent 2px) 0 0/41px 31px,
+                      radial-gradient(circle at 40% 50%, #5ee7ff 0 1.5px, transparent 2px) 0 0/29px 37px,
+                      linear-gradient(180deg, #2b2340 0%, #1a1527 70%, #3a2a22 70%, #2a1e18 100%)`,
+                  }}
                 />
-                <div aria-hidden className={`noise absolute inset-0 overflow-hidden ${live ? "[--noise-opacity:0.14]" : "[--noise-opacity:0.45]"}`} />
+                <div aria-hidden className="absolute top-3 inset-x-0 z-[2] flex justify-center gap-3 sm:gap-4">
+                  {["#ff3b3b", "#ffb000", "#7dff9a", "#5ee7ff", "#b38cff"].map((c, i) => (
+                    <span
+                      key={c}
+                      className="block w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full animate-led"
+                      style={{ background: c, boxShadow: `0 0 10px 2px ${c}`, animationDelay: `${(i * 0.3 + idx * 0.2) % 1.4}s` }}
+                    />
+                  ))}
+                </div>
+                <div aria-hidden className={`noise absolute inset-0 overflow-hidden ${live ? "[--noise-opacity:0.1]" : "[--noise-opacity:0.4]"}`} />
                 <div className="absolute inset-0 z-[4] flex flex-col justify-between p-4 font-retro uppercase">
                   <div className="flex items-center justify-between text-lg">
                     <span>{feedId}</span>
@@ -44,7 +59,9 @@ export default function Projects() {
                       </span>
                     )}
                   </div>
-                  <p className="text-4xl sm:text-5xl leading-none text-center vhs-text">{title}</p>
+                  <p className="text-4xl sm:text-5xl leading-none text-center text-[#fff6d8] [text-shadow:3px_3px_0_#000,-1px_0_#ff3b3b,1px_0_#5ee7ff]">
+                    {title}
+                  </p>
                   <span className="text-lg text-[#8c9b8f] text-right">{String(idx + 1).padStart(2, "0")}/{String(projects.length).padStart(2, "0")}</span>
                 </div>
               </div>

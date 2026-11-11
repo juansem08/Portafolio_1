@@ -3,6 +3,7 @@
 import { useEffect, useReducer, useRef, useState } from "react";
 import { Volume2, VolumeX, BatteryLow, BatteryMedium, BatteryFull } from "lucide-react";
 import Creature, { type CreatureId } from "./Creature";
+import RoomScene from "./RoomScene";
 import { RecDot } from "./ui";
 import { useApp } from "@/context/AppContext";
 
@@ -250,12 +251,8 @@ export default function NightShiftGame() {
       {/* Monitor principal */}
       <div className="screen scanlines vignette aspect-[16/10] sm:aspect-[16/9]">
         <div aria-hidden className="cam-corners" />
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at 50% 45%, #26302b 0%, #0b100e 55%, #050706 85%)" }}
-        />
-        <div aria-hidden className="noise absolute inset-0 overflow-hidden [--noise-opacity:0.16]" />
+        <RoomScene id={s.cam} sign={t("rooms.contact")} />
+        <div aria-hidden className="noise absolute inset-0 overflow-hidden [--noise-opacity:0.14]" />
         {/* Estática al cambiar de cámara o cuando algo se mueve */}
         <div key={s.glitch} aria-hidden className="noise absolute inset-0 z-[3] overflow-hidden bg-[#0b0f0d] animate-static [--noise-opacity:0.9]" />
 
@@ -272,7 +269,7 @@ export default function NightShiftGame() {
         {/* Rótulos de la cámara */}
         <div className="absolute inset-0 z-[4] flex flex-col justify-between p-4 sm:p-5 pointer-events-none">
           <div className="flex items-start justify-between gap-3">
-            <p className="font-retro leading-none uppercase">
+            <p className="font-retro leading-none uppercase bg-black/55 px-2 py-1">
               <span className="block text-2xl sm:text-3xl vhs-text">CAM {cam.num}</span>
               <span className="block text-lg sm:text-xl text-[#c9d6cb] mt-1">{t(`rooms.${cam.id}`)}</span>
             </p>
@@ -281,7 +278,7 @@ export default function NightShiftGame() {
             )}
           </div>
           <div className="flex items-end justify-between gap-3">
-            <p className="max-w-[60%] text-sm sm:text-base text-[#c9d6cb]">{t(`teasers.${cam.id}`)}</p>
+            <p className="max-w-[60%] text-sm sm:text-base text-[#e4ece5] bg-black/55 px-2 py-1">{t(`teasers.${cam.id}`)}</p>
             <a href={cam.href} className="pointer-events-auto cam-btn shrink-0 px-3 py-1.5 text-lg sm:text-xl bg-[#e4ece5] text-[#050706] border-[#e4ece5] hover:bg-rec hover:border-rec hover:text-white">
               {t("game.goRoom")} ▶
             </a>

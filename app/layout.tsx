@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, VT323 } from "next/font/google";
+import { Inter, VT323, Special_Elite, Old_Standard_TT } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "@/context/AppContext";
 
@@ -14,6 +14,22 @@ const retro = VT323({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-retro",
+  display: "swap",
+});
+
+// Máquina de escribir (expedientes, notas)
+const typewriter = Special_Elite({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-typewriter",
+  display: "swap",
+});
+
+// Periódico (recorte de "Sobre mí")
+const news = Old_Standard_TT({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-news",
   display: "swap",
 });
 
@@ -37,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`dark scroll-smooth ${inter.variable} ${retro.variable}`}>
+    <html lang="es" className={`dark scroll-smooth ${inter.variable} ${retro.variable} ${typewriter.variable} ${news.variable}`}>
       <body className="min-h-screen bg-bg text-ink antialiased">
         <AppProvider>
           {/* Grano de video muy sutil en toda la página */}

@@ -52,6 +52,13 @@ export const translations = {
       workspace: "Lenguajes, frameworks y herramientas que uso.",
       contact: "Escríbeme: correo, GitHub y formulario.",
     },
+    decor: {
+      poster1: "¡No hagas deploy los viernes!",
+      wanted: "SE BUSCA",
+      wantedSeen: "Visto por última vez en CAM 05",
+      flyerTitle: "Tu código te observa",
+      flyerSub: "Escribe tests. Siempre.",
+    },
     hero: {
       badge: "ID // GUARDIA NOCTURNO",
       status: "DISPONIBLE PARA PROYECTOS",
@@ -111,6 +118,16 @@ export const translations = {
       interestsTitle: "INTERESES",
       stackTitle: "HABILIDADES",
       interestsList: ["Gastronomía", "Cine de terror", "Comedia", "Música tropical", "Arte", "Vida social"],
+      news: {
+        masthead: "El Vigía de Pasto",
+        edition: "Edición nocturna · Pasto, Colombia",
+        headline: "Estudiante de Ingeniería de Software toma el turno nocturno del laboratorio",
+        subhead: "Sebastián combina el código con la gastronomía, el arte y el cine de terror.",
+        caption: "Sebastián, guardia nocturno del laboratorio de software.",
+        adTitle: "Se ofrece",
+        adBody: "Ingeniero de software en formación. Disponible para proyectos web y prácticas. Turno de día o de noche.",
+        adCta: "Contactar ▶",
+      },
     },
     projects: {
       level: "CAM 02",
@@ -150,6 +167,8 @@ export const translations = {
       academicHeading: "EXPERIENCIA ACADÉMICA",
       workBadge: "LABORAL",
       academicBadge: "ACADÉMICA",
+      fileLabel: "EXPEDIENTE",
+      tagsLabel: "Etiquetas",
       items: [
         {
           type: "laboral",
@@ -342,6 +361,13 @@ export const translations = {
       workspace: "Languages, frameworks and tools I use.",
       contact: "Reach me: email, GitHub and contact form.",
     },
+    decor: {
+      poster1: "Never deploy on Fridays!",
+      wanted: "WANTED",
+      wantedSeen: "Last seen on CAM 05",
+      flyerTitle: "Your code is watching you",
+      flyerSub: "Write tests. Always.",
+    },
     hero: {
       badge: "ID // NIGHT GUARD",
       status: "OPEN TO PROJECTS",
@@ -401,6 +427,16 @@ export const translations = {
       interestsTitle: "INTERESTS",
       stackTitle: "SKILLS",
       interestsList: ["Gastronomy", "Horror films", "Comedy", "Tropical music", "Art", "Social life"],
+      news: {
+        masthead: "The Pasto Watch",
+        edition: "Night edition · Pasto, Colombia",
+        headline: "Software Engineering student takes the lab's night shift",
+        subhead: "Sebastián blends code with food, art and horror films.",
+        caption: "Sebastián, night guard of the software lab.",
+        adTitle: "Available",
+        adBody: "Software engineer in training. Open to web projects and internships. Day or night shift.",
+        adCta: "Get in touch ▶",
+      },
     },
     projects: {
       level: "CAM 02",
@@ -440,6 +476,8 @@ export const translations = {
       academicHeading: "ACADEMIC BACKGROUND",
       workBadge: "WORK",
       academicBadge: "ACADEMIC",
+      fileLabel: "RECORD",
+      tagsLabel: "Tags",
       items: [
         {
           type: "laboral",
