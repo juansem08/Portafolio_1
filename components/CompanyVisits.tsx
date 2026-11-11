@@ -118,31 +118,6 @@ export default function CompanyVisits() {
       cardRotation: "rotate-2",
       stampText: isEn ? "CIBAS // IMMERSION OK" : "CIBAS // INMERSIÓN OK",
     },
-    {
-      id: "globant",
-      name: "Globant",
-      badge: isEn ? "AI & REINVENTION STUDIOS" : "IA & ESTUDIOS DE REINVENCIÓN",
-      badgeColor: "bg-[#630000] text-[#EDEBDD]",
-      location: "Medellín, Colombia",
-      role: isEn ? "Digital Studios, AI & Tech Reinvention" : "Estudios Digitales, IA & Reinversión Tecnológica",
-      description: isEn
-        ? "Immersion inside Globant innovation studios in Medellín. Deep dive into their 'AI Reinvention Studios' paradigm, planetary-scale interactive digital experiences, gaming studios, high-concurrency cloud systems, and best practices for global cross-industry projects."
-        : "Inmersión en los estudios de innovación de Globant en Medellín. Exploración de su enfoque 'AI Reinvention Studios', desarrollo de experiencias digitales a escala planetaria, gaming studios, arquitecturas de alta concurrencia y buenas prácticas para proyectos globales multisectoriales.",
-      takeaways: isEn
-        ? ["Reinvention Studios", "Applied Enterprise AI", "High Concurrency", "Global Innovation"]
-        : ["Reinvention Studios", "IA aplicada a escala", "Gaming & UI/UX", "Innovación Global"],
-      images: [
-        {
-          src: "/images/visits/globant.jpg",
-          caption: isEn
-            ? "Globant engineering & digital studios innovation facilities in Medellín"
-            : "Sede de innovación y estudios de ingeniería de Globant en Medellín",
-          rotation: "-rotate-1",
-        },
-      ],
-      cardRotation: "-rotate-1",
-      stampText: isEn ? "GLOBANT // INNOVATION OK" : "GLOBANT // INNOVATION OK",
-    },
   ];
 
   return (
