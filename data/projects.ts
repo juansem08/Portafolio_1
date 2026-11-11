@@ -73,6 +73,8 @@ export const projects: Project[] = [
     icon: "watch",
     image: "/images/projects/noticias-garmin.png",
     repos: [{ label: "Código", url: "https://github.com/juansem08/Visor_Rese-as_Noticias_Dia" }],
+    // Tienda Connect IQ de Garmin (se abre desde el celular con la app Garmin Connect)
+    download: "https://apps-developer.garmin.com/es-ES/apps/968a242d-a460-43cf-b477-fc4688d2e5ff",
   },
   {
     title: "Gridmind",
@@ -88,6 +90,7 @@ export const projects: Project[] = [
       { label: "Frontend", url: "https://github.com/CV17d/gridmind-frontend" },
       { label: "Backend", url: "https://github.com/CV17d/gridmind-backend" },
     ],
+    demo: "https://gridmind-on.vercel.app/",
   },
   {
     title: "Demencia No Límite",
