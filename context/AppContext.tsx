@@ -131,6 +131,26 @@ export const translations = {
           demo: "https://calibracion-reparacion.vercel.app",
         },
         {
+          type: "laboral",
+          title: "Desarrollador y Arquitecto",
+          organization: "VisualPart",
+          period: "2026",
+          description: "Diseño e implementación de la arquitectura modular de software, estructura desacoplada del frontend y backend, y optimización del motor de búsqueda visual para repuestos automotrices.",
+          badges: ["Arquitectura de Software", "Next.js", "E-commerce", "Búsqueda visual"],
+        },
+        {
+          type: "laboral",
+          title: "Pasante",
+          organization: "Cootransvalle — Sibundoy, Putumayo",
+          period: "Pasantía",
+          description: "Experiencia de aprendizaje en una empresa de transporte. Apoyé la organización y gestión de documentos de la empresa por medio de la plataforma web que ellos manejaban.",
+          details: [
+            "Organización y clasificación de documentos en la plataforma web de la empresa.",
+            "Trabajo con el equipo administrativo bajo la guía de la gerencia.",
+          ],
+          badges: ["Gestión documental", "Plataformas web", "Trabajo en equipo"],
+        },
+        {
           type: "academica",
           title: "Ingeniería de Software",
           organization: "Universidad Cooperativa de Colombia — Pasto, Nariño",
@@ -427,6 +447,26 @@ export const translations = {
           badges: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Supabase"],
           github: "https://github.com/Sebas082/Calibracion_Reparacion",
           demo: "https://calibracion-reparacion.vercel.app",
+        },
+        {
+          type: "laboral",
+          title: "Developer & Architect",
+          organization: "VisualPart",
+          period: "2026",
+          description: "Design and implementation of modular software architecture, decoupled frontend and backend structure, and visual search engine optimization for auto parts.",
+          badges: ["Software Architecture", "Next.js", "E-commerce", "Visual Search"],
+        },
+        {
+          type: "laboral",
+          title: "Intern",
+          organization: "Cootransvalle — Sibundoy, Putumayo",
+          period: "Internship",
+          description: "Learning experience at a transport company. I supported the organization and management of the company's documents through the web platform they used.",
+          details: [
+            "Organizing and classifying documents on the company's web platform.",
+            "Working with the administrative team under management's guidance.",
+          ],
+          badges: ["Document management", "Web platforms", "Teamwork"],
         },
         {
           type: "academica",

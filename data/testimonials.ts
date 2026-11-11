@@ -30,10 +30,10 @@ export const testimonials: Testimonial[] = [
     initials: "MS",
     photo: "/images/testimonials/miguel.jpg",
     role: { es: "Gerente · Cootransvalle", en: "Manager · Cootransvalle" },
-    relation: { es: "Sibundoy, Putumayo", en: "Sibundoy, Putumayo" },
+    relation: { es: "Pasantía · Sibundoy, Putumayo", en: "Internship · Sibundoy, Putumayo" },
     feedback: {
-      es: "Sebastián es una persona responsable y comprometida. Destaco su disposición para resolver los problemas tecnológicos de la empresa y la seriedad con la que asume cada tarea.",
-      en: "Sebastián is a responsible and committed person. I value his willingness to solve the company's technology problems and the seriousness with which he takes on every task.",
+      es: "Durante su pasantía, Sebastián nos apoyó en la organización de los documentos de la empresa en nuestra plataforma web. Es una persona responsable y comprometida, con muchas ganas de aprender y seriedad en cada tarea.",
+      en: "During his internship, Sebastián helped us organize the company's documents on our web platform. He is a responsible and committed person, eager to learn and serious about every task.",
     },
   },
   {
