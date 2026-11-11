@@ -19,8 +19,7 @@ export default function Footer() {
     { label: t("nav.testimonials"), href: "#testimonials" },
     { label: t("nav.experience"), href: "#experience" },
     { label: t("nav.contact"), href: "#contact" },
-    { label: t("nav.workspace"), href: "#workspace" },
-    { label: t("nav.visits"), href: "#visits" },
+    { label: t("nav.extra"), href: "#adicional" },
   ];
 
   const scrollToTop = () => {

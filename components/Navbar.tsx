@@ -25,8 +25,7 @@ export default function Navbar() {
     { label: t("nav.testimonials"), href: "#testimonials", rot: "rotate-2" },
     { label: t("nav.experience"), href: "#experience", rot: "-rotate-1" },
     { label: t("nav.contact"), href: "#contact", rot: "rotate-1" },
-    { label: t("nav.workspace"), href: "#workspace", rot: "-rotate-2" },
-    { label: t("nav.visits"), href: "#visits", rot: "-rotate-1" },
+    { label: t("nav.extra"), href: "#adicional", rot: "-rotate-2" },
   ];
 
   return (

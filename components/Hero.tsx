@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Download, ShieldCheck, Layers, Sparkles, Cpu } from "lucide-react";
-import { Tape, BadgeClip, Pushpin, DoodleArrow, MarkerScratch, Barcode } from "./ScrapbookAssets";
+import { Download, Code2, Sparkles, Database, Languages } from "lucide-react";
+import { Tape, BadgeClip, Pushpin, MarkerScratch, Barcode } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
 
 export default function Hero() {
@@ -165,22 +165,6 @@ export default function Hero() {
                 {/* Realistic peel corner */}
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-white/80 rotate-45 pointer-events-none" />
               </a>
-
-              {/* "Ver proyectos ->" with Hand-drawn SVG doodle arrow in Cherry Red */}
-              <div className="flex items-center gap-3 relative">
-                <a
-                  href="#projects"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 bg-[#FAF9F5] dark:bg-[#1B1717] hover:bg-[#EDEBDD] dark:hover:bg-[#262121] text-[#1B1717] dark:text-[#EDEBDD] font-mono font-bold text-xs uppercase tracking-wider border-2 border-[#1B1717] dark:border-[#810100] shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100] rotate-1 hover:rotate-0 transition-all active:scale-95"
-                >
-                  <span>{t("hero.viewProjects")}</span>
-                  <span className="text-[#810100] dark:text-[#ff4444] font-bold">&darr;</span>
-                </a>
-                
-                {/* Doodle arrow pointing down */}
-                <div className="hidden sm:block -mb-6 pointer-events-none">
-                  <DoodleArrow color="#810100" className="rotate-12" />
-                </div>
-              </div>
             </div>
           </div>
 
@@ -201,12 +185,12 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-lg bg-[#810100] border-2 border-[#1B1717] dark:border-[#EDEBDD]/30 flex items-center justify-center text-[#EDEBDD] shadow-[2px_2px_0px_#1B1717]">
-                  <Layers className="w-6 h-6" />
+                  <Code2 className="w-6 h-6" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-[10px] font-mono text-[#EDEBDD] font-bold bg-[#1B1717] dark:bg-[#630000] px-1.5 py-0.5 border border-[#1B1717] dark:border-[#810100]">
-                      ENAMEL PIN
+                      {t("hero.pillar1Badge")}
                     </span>
                   </div>
                   <h3 className="font-display font-black text-[#1B1717] dark:text-[#EDEBDD] text-base mt-1 uppercase">
@@ -223,12 +207,12 @@ export default function Hero() {
             <div className="relative group p-5 bg-[#FAF9F5] dark:bg-[#1B1717] border-2 border-dashed border-[#810100] shadow-[5px_5px_0px_#1B1717] dark:shadow-[5px_5px_0px_#810100] rotate-2 hover:rotate-0 hover:-translate-y-1 transition-all duration-200">
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-lg bg-[#630000] border-2 border-[#1B1717] dark:border-[#EDEBDD]/30 flex items-center justify-center text-[#EDEBDD] shadow-[2px_2px_0px_#1B1717]">
-                  <ShieldCheck className="w-6 h-6" />
+                  <Sparkles className="w-6 h-6" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-[10px] font-mono text-[#EDEBDD] font-bold bg-[#810100] px-1.5 py-0.5 border border-[#630000]">
-                      TACTICAL PATCH
+                      {t("hero.pillar2Badge")}
                     </span>
                   </div>
                   <h3 className="font-display font-black text-[#1B1717] dark:text-[#EDEBDD] text-base mt-1 uppercase">
@@ -245,12 +229,12 @@ export default function Hero() {
             <div className="relative group p-5 bg-[#FAF9F5] dark:bg-[#1B1717] border-2 border-[#1B1717] dark:border-[#810100] shadow-[5px_5px_0px_#1B1717] dark:shadow-[5px_5px_0px_#630000] -rotate-2 hover:rotate-0 hover:-translate-y-1 transition-all duration-200">
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-lg bg-[#1B1717] dark:bg-[#121010] border-2 border-[#810100] flex items-center justify-center text-[#EDEBDD] shadow-[2px_2px_0px_#1B1717]">
-                  <Sparkles className="w-6 h-6 text-amber-400" />
+                  <Database className="w-6 h-6" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-[10px] font-mono text-[#EDEBDD] font-bold bg-[#630000] px-1.5 py-0.5 border border-[#1B1717]">
-                      CLEAN CHIP
+                      {t("hero.pillar3Badge")}
                     </span>
                   </div>
                   <h3 className="font-display font-black text-[#1B1717] dark:text-[#EDEBDD] text-base mt-1 uppercase">
@@ -263,18 +247,23 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Hardware Module Info Box */}
+            {/* Idiomas */}
             <div className="p-4 bg-[#FAF9F5] dark:bg-[#1B1717] border-2 border-[#1B1717] dark:border-[#810100] rounded shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#630000] font-mono text-xs text-[#1B1717] dark:text-[#EDEBDD] rotate-1">
-              <div className="flex items-center justify-between border-b border-[#1B1717]/20 dark:border-[#EDEBDD]/20 pb-2 mb-2 text-[#810100] dark:text-[#ff4444] font-bold">
-                <span className="flex items-center gap-1.5">
-                  <Cpu className="w-4 h-4" />
-                  {t("hero.specsTitle")}
-                </span>
-                <span>ROM: 512KB</span>
+              <div className="flex items-center gap-1.5 border-b border-[#1B1717]/20 dark:border-[#EDEBDD]/20 pb-2 mb-2 text-[#810100] dark:text-[#ff4444] font-bold">
+                <Languages className="w-4 h-4" />
+                {t("hero.specsTitle")}
               </div>
-              <p className="text-[11px] leading-relaxed text-neutral-700 dark:text-neutral-300">
-                {t("hero.specsDesc")}
-              </p>
+              <ul className="space-y-1.5">
+                {[
+                  [t("hero.lang1"), t("hero.lang1Level")],
+                  [t("hero.lang2"), t("hero.lang2Level")],
+                ].map(([name, level]) => (
+                  <li key={name} className="flex items-center justify-between">
+                    <span className="font-bold">{name}</span>
+                    <span className="px-2 py-0.5 bg-[#810100] text-[#EDEBDD] text-[10px] font-black">{level}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
           </div>

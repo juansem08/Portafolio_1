@@ -4,8 +4,7 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Testimonials from "@/components/Testimonials";
 import Experience from "@/components/Experience";
-import CompanyVisits from "@/components/CompanyVisits";
-import ExtraSection from "@/components/ExtraSection";
+import Additional from "@/components/Additional";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,8 +19,8 @@ export default function Home() {
       <Testimonials />
       <Experience />
       <Contact />
-      <ExtraSection />
-      <CompanyVisits />
+      {/* Sección adicional: habilidades técnicas, certificados y visitas empresariales */}
+      <Additional />
       <Footer />
     </main>
   );

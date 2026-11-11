@@ -5,6 +5,8 @@ type Text = Record<Lang, string>;
 export interface Testimonial {
   name: string;
   initials: string;
+  // Foto en public/images/testimonials. Si falta, se muestran las iniciales.
+  photo?: string;
   role: Text;
   relation: Text;
   feedback: Text;
@@ -15,6 +17,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Lilian Maritza Chamorro",
     initials: "LC",
+    photo: "/images/testimonials/lilian.jpg",
     role: { es: "Instructora de Sistemas · SENA", en: "Systems Instructor · SENA" },
     relation: { es: "Trabajamos juntos", en: "We worked together" },
     feedback: {
@@ -25,7 +28,8 @@ export const testimonials: Testimonial[] = [
   {
     name: "Miguel Silva",
     initials: "MS",
-    role: { es: "Gerente · Contrasvalle Ltda.", en: "Manager · Contrasvalle Ltda." },
+    photo: "/images/testimonials/miguel.jpg",
+    role: { es: "Gerente · Cootransvalle", en: "Manager · Cootransvalle" },
     relation: { es: "Sibundoy, Putumayo", en: "Sibundoy, Putumayo" },
     feedback: {
       es: "Sebastián es una persona responsable y comprometida. Destaco su disposición para resolver los problemas tecnológicos de la empresa y la seriedad con la que asume cada tarea.",
@@ -35,6 +39,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Jorge Nicolás Rodríguez",
     initials: "JR",
+    photo: "/images/testimonials/jorge.jpg",
     role: { es: "Colaborador · Calibración y Reparación", en: "Collaborator · Calibración y Reparación" },
     relation: { es: "Página web del taller", en: "Repair shop website" },
     feedback: {

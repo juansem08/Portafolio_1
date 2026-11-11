@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Quote, Star, UserCheck } from "lucide-react";
 import { Tape, Paperclip, Pushpin } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
@@ -56,12 +57,24 @@ export default function Testimonials() {
               </div>
 
               <figcaption className="pt-4 border-t border-[#1B1717]/20 dark:border-[#EDEBDD]/20 flex items-center gap-3">
-                <div
-                  aria-hidden
-                  className="w-12 h-12 shrink-0 rounded-full bg-[#810100] text-[#EDEBDD] font-mono font-black text-sm flex items-center justify-center border-2 border-[#1B1717] dark:border-[#EDEBDD]/40 shadow-[2px_2px_0px_#1B1717]"
-                >
-                  {item.initials}
-                </div>
+                {item.photo ? (
+                  <div className="relative w-14 h-14 shrink-0 rounded-full overflow-hidden border-2 border-[#1B1717] dark:border-[#EDEBDD]/40 shadow-[2px_2px_0px_#1B1717]">
+                    <Image
+                      src={item.photo}
+                      alt={`${t("testimonials.photoOf")} ${item.name}`}
+                      fill
+                      sizes="56px"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    aria-hidden
+                    className="w-14 h-14 shrink-0 rounded-full bg-[#810100] text-[#EDEBDD] font-mono font-black text-sm flex items-center justify-center border-2 border-[#1B1717] dark:border-[#EDEBDD]/40 shadow-[2px_2px_0px_#1B1717]"
+                  >
+                    {item.initials}
+                  </div>
+                )}
                 <div>
                   <p className="text-sm font-black text-[#1B1717] dark:text-[#EDEBDD] uppercase font-display">
                     {item.name}

@@ -1,12 +1,12 @@
 "use client";
 
 import { 
-  Terminal, 
-  Bot, 
-  Code2, 
-  Box, 
-  Layers, 
-  Cloud,
+  Terminal,
+  Bot,
+  Code2,
+  GitBranch,
+  Sparkles,
+  Flame,
   Database,
   FileCode,
   Braces
@@ -71,32 +71,32 @@ export default function ExtraSection() {
 
   const rawTools = [
     {
-      icon: Terminal,
+      icon: GitBranch,
       accentColor: "border-[#810100] text-[#810100] dark:text-[#EDEBDD] bg-[#810100]/10",
       rotation: "-rotate-1",
     },
     {
-      icon: Bot,
+      icon: Sparkles,
       accentColor: "border-[#630000] text-[#630000] dark:text-[#EDEBDD] bg-[#630000]/10",
       rotation: "rotate-1",
     },
     {
-      icon: Code2,
+      icon: Flame,
       accentColor: "border-[#1B1717] dark:border-[#810100] text-[#1B1717] dark:text-[#EDEBDD] bg-[#1B1717]/10",
       rotation: "-rotate-2",
     },
     {
-      icon: Box,
+      icon: Database,
       accentColor: "border-[#810100] text-[#810100] dark:text-[#EDEBDD] bg-[#810100]/10",
       rotation: "rotate-2",
     },
     {
-      icon: Layers,
+      icon: Bot,
       accentColor: "border-[#1B1717] dark:border-[#810100] text-[#1B1717] dark:text-[#EDEBDD] bg-[#1B1717]/10",
       rotation: "-rotate-1",
     },
     {
-      icon: Cloud,
+      icon: Code2,
       accentColor: "border-[#630000] text-[#630000] dark:text-[#EDEBDD] bg-[#630000]/10",
       rotation: "rotate-1",
     },
