@@ -40,11 +40,11 @@ export const testimonials: Testimonial[] = [
     name: "Jorge Nicolás Rodríguez",
     initials: "JR",
     photo: "/images/testimonials/jorge.jpg",
-    role: { es: "Colaborador · Calibración y Reparación", en: "Collaborator · Calibración y Reparación" },
-    relation: { es: "Página web del taller", en: "Repair shop website" },
+    role: { es: "Compañero de equipo · Hackatón", en: "Teammate · Hackathon" },
+    relation: { es: "Trabajamos juntos en una hackatón", en: "We worked together at a hackathon" },
     feedback: {
-      es: "Trabajamos juntos en la página web del taller de Calibración y Reparación. Sebastián organiza bien el trabajo, propone soluciones claras y es muy fácil colaborar con él.",
-      en: "We worked together on the Calibración y Reparación repair shop website. Sebastián organizes work well, proposes clear solutions and is very easy to collaborate with.",
+      es: "Estuvimos trabajando juntos en una hackatón. Sebastián organiza bien el trabajo bajo presión, propone soluciones claras y es muy fácil colaborar con él.",
+      en: "We worked together at a hackathon. Sebastián organizes work well under pressure, proposes clear solutions and is very easy to collaborate with.",
     },
   },
 ];

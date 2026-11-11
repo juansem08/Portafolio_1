@@ -119,7 +119,7 @@ export const translations = {
           title: "Desarrollador web",
           organization: "Taller de calibración y reparación automotriz — Pasto, Nariño",
           period: "2026",
-          description: "Desarrollador web independiente. Desarrollé el sitio web del taller, con el apoyo del colaborador Jorge Nicolás Rodríguez:",
+          description: "Desarrollador web independiente. Desarrollé el sitio web del taller:",
           details: [
             "Catálogo de repuestos con página de detalle por producto.",
             "Formulario de agendamiento de citas con su propia ruta de API.",
@@ -437,7 +437,7 @@ export const translations = {
           title: "Web Developer",
           organization: "Automotive calibration and repair shop — Pasto, Nariño",
           period: "2026",
-          description: "Freelance web developer. I built the shop's website, with support from collaborator Jorge Nicolás Rodríguez:",
+          description: "Freelance web developer. I built the shop's website:",
           details: [
             "Auto parts catalog with a detail page for each product.",
             "Appointment booking form with its own API route.",
