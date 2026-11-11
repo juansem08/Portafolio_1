@@ -11,54 +11,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cotton: {
-          DEFAULT: "#EDEBDD",
-          light: "#FAF9F5",
-          card: "#F4F2E8",
-          dark: "#DDD9C5",
-        },
-        cherry: {
-          DEFAULT: "#810100",
-          hover: "#9E0201",
-          light: "#B80403",
-          dark: "#630000",
-        },
-        maroon: {
-          DEFAULT: "#630000",
-          hover: "#780000",
-          dark: "#450000",
-        },
-        noir: {
-          DEFAULT: "#1B1717",
-          card: "#262121",
-          light: "#3A3333",
-          muted: "#665C5C",
-          border: "#1B1717",
-        },
-        primary: {
-          DEFAULT: "#810100", // Cherry Red
-          hover: "#9E0201",
-          dark: "#630000",    // Maroon
-          light: "#EDEBDD",   // Cotton
-        },
+        // Colores que cambian entre modo día y modo noche (ver app/globals.css)
+        bg: "var(--bg)",
+        panel: "var(--panel)",
+        panel2: "var(--panel-2)",
+        ink: "var(--ink)",
+        muted: "var(--muted)",
+        edge: "var(--edge)",
+        // Acentos arcade (iguales en ambos modos)
+        pink: "#ff4f79",
+        yellow: "#ffc83d",
+        mint: "#2ee6a6",
+        sky: "#45c4ff",
+        violet: "#8a5cff",
+        orange: "#ff8a3d",
+        screen: "#120c2b",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["var(--font-jetbrains-mono)", "'Courier Prime'", "monospace"],
-        marker: ["'Permanent Marker'", "cursive"],
-        hand: ["'Caveat'", "cursive"],
-        display: ["'Space Grotesk'", "sans-serif"],
-        typewriter: ["'Courier Prime'", "monospace"],
-      },
-      animation: {
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "float": "float 6s ease-in-out infinite",
-      },
-      keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
+        pixel: ["var(--font-pixel)", "monospace"],
+        retro: ["var(--font-retro)", "monospace"],
       },
     },
   },

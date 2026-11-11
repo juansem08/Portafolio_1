@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Press_Start_2P, VT323 } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "@/context/AppContext";
 
@@ -9,26 +9,34 @@ const inter = Inter({
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+// Títulos, botones y etiquetas
+const pixel = Press_Start_2P({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  variable: "--font-pixel",
+  display: "swap",
+});
+
+// Texto corto tipo terminal (etiquetas, fechas)
+const retro = VT323({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-retro",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Sebastián | Ingeniero de Software & Lead Software Architect",
+  title: "Sebastián | Portafolio de Ingeniería de Software",
   description:
-    "Portafolio profesional de Sebastián. Construyendo software escalable con arquitectura limpia y capas desacopladas.",
+    "Portafolio de Sebastián, estudiante de Ingeniería de Software. Proyectos, experiencia y contacto en un portafolio estilo arcade.",
   keywords: [
     "Sebastián",
+    "Ingeniería de Software",
     "Software Engineer",
-    "Software Architect",
-    "Quality Engineer",
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
-    "Frontend",
-    "Full-Stack",
+    "Portafolio",
   ],
   authors: [{ name: "Sebastián" }],
 };
@@ -44,21 +52,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen bg-[#EDEBDD] dark:bg-[#121010] text-[#1B1717] dark:text-[#EDEBDD] bg-cutting-mat antialiased selection:bg-[#810100] selection:text-[#EDEBDD] relative">
+    <html lang="es" className={`scroll-smooth ${inter.variable} ${pixel.variable} ${retro.variable}`}>
+      <body className="min-h-screen bg-arcade text-ink antialiased">
         <AppProvider>
-          {/* Full-page subtle tactile noise overlay */}
-          <div className="fixed inset-0 pointer-events-none noise-overlay z-50 opacity-30" />
-
-          {/* Studio Desk Accents & warm editorial glow */}
-          <div className="fixed inset-0 pointer-events-none z-0">
-            <div className="absolute -top-32 left-1/4 w-[700px] h-[500px] bg-[#810100]/[0.04] dark:bg-[#810100]/[0.08] rounded-full blur-[140px]" />
-            <div className="absolute top-[45%] right-0 w-[600px] h-[600px] bg-[#630000]/[0.03] dark:bg-[#630000]/[0.06] rounded-full blur-[160px]" />
-          </div>
-
-          <div className="relative z-10 flex min-h-screen flex-col">
-            {children}
-          </div>
+          <div className="relative flex min-h-screen flex-col">{children}</div>
         </AppProvider>
       </body>
     </html>

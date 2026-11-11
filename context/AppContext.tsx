@@ -17,82 +17,86 @@ interface AppContextType {
 
 export const translations = {
   es: {
-    // Navbar
     nav: {
       home: "Inicio",
-      about: "Sobre Mí",
+      about: "Sobre mí",
       projects: "Proyectos",
       experience: "Experiencia",
       testimonials: "Testimonios",
-      workspace: "Stack & Lenguajes",
+      workspace: "Stack",
       contact: "Contacto",
       visits: "Visitas",
-      letsTalk: "HABLEMOS // CONECTAR",
-      startProject: "HABLEMOS // INICIAR PROYECTO",
+      cta: "¡HABLEMOS!",
+      day: "DÍA",
+      night: "NOCHE",
+      toDay: "Cambiar a modo día",
+      toNight: "Cambiar a modo noche",
+      toLang: "Switch to English",
+      menu: "Abrir menú",
     },
-    // Hero
     hero: {
-      badgeOpenToWork: "INGENIERÍA DE SOFTWARE // OPEN TO WORK",
-      labTag: "LAB: SEBASTIAN-SYS // 2026",
-      facultyTitle: "FACULTAD DE INGENIERÍA // CREDENCIAL TÉCNICA",
+      player: "PLAYER 1",
+      status: "DISPONIBLE PARA PROYECTOS",
       greeting: "HOLA, SOY",
-      name: "Sebastián",
-      verified: "VERIFICADO",
-      role: ">_ Software Engineer & Lead Software Architect",
+      name: "SEBASTIÁN",
+      role: "Software Engineer & Software Architect",
+      tagline: "“Dos de agua por una de arroz, así es como yo hago el código y así de bueno me queda el arroz.”",
       location: "PASTO, COLOMBIA",
-      academicSummary: "UCC (ING. SOFTWARE) • SENA (TÉCNICO)",
-      academicStatus: "PREGRADO EN PROCESO // TITULADO CERTIFICADO",
-      manifestoHeader: "MANIFIESTO_ARQUITECTURA // NOTA DE TALLER",
-      manifestoQuote: "“Dos de agua por una de arroz, así es como yo hago el código y así de bueno me queda el arroz.”",
-      manifestoAuthor: "— Sebastián // Lead Software Architect",
-      downloadCv: "DESCARGAR CV // PDF",
+      downloadCv: "DESCARGAR CV",
       viewProjects: "VER PROYECTOS",
-      pillarsLabel: "// PILARES Y CERTIFICACIÓN",
-      pillar1Title: "Capas Desacopladas",
-      pillar1Desc: "Dominio, aplicación e infraestructura aisladas.",
-      pillar2Title: "Calidad & Testing",
-      pillar2Desc: "TDD estricto y cobertura de código >95%.",
-      pillar3Title: "Arquitectura Limpia",
-      pillar3Desc: "Alta cohesión, bajo acoplamiento y testeabilidad.",
-      specsTitle: "SPEC: HARDWARE_SPECS",
-      specsDesc: "Software construido con patrones modulares, arquitecturas orientadas a eventos y Next.js App Router de alto desempeño.",
+      avatarAlt: "Avatar de Sebastián en pixel art",
     },
-    // About
+    game: {
+      score: "PUNTOS",
+      gems: "GEMAS",
+      clickToPlay: "CLIC PARA JUGAR",
+      hint: "Muévete con las flechas o WASD (en celular, con los botones). Recoge las gemas para desbloquear cada sección.",
+      unlocked: "¡DESBLOQUEASTE!",
+      go: "IR",
+      complete: "¡NIVEL COMPLETO!",
+      completeDesc: "Recogiste todas las gemas. Ahora explora el portafolio completo.",
+      restart: "JUGAR DE NUEVO",
+      goals: "OBJETIVOS",
+      controls: "Controles del juego",
+      up: "Mover arriba",
+      down: "Mover abajo",
+      left: "Mover a la izquierda",
+      right: "Mover a la derecha",
+      ariaBoard: "Mini juego: usa las flechas o WASD para mover a tu personaje y recoger gemas",
+    },
     about: {
-      sectionTape: "// 01. EXPEDIENTE & FILOSOFÍA",
-      folderTab: "EXPEDIENTE // SEBAS-SYS-08",
+      level: "NIVEL 1",
       title: "SOBRE MÍ",
-      badgePasto: "PASTO // COL",
+      subtitle: "Ficha del jugador: quién soy, qué estudio y qué me gusta.",
       mainBio: "Actualmente curso la carrera de Ingeniería de Software en la Universidad Cooperativa de Colombia. Fuera del ámbito académico, mis principales intereses son la gastronomía, el arte y el cine, con preferencia por los géneros de terror y comedia. Asimismo, disfruto de la música tropical y de las actividades sociales con amigos.",
-      card1Title: "Gastronomía, Arte & Cine",
+      card1Title: "Gastronomía, arte y cine",
       card1Desc: "Cine de terror y comedia, pasión culinaria y apreciación artística.",
-      card2Title: "Música Tropical & Amigos",
+      card2Title: "Música tropical y amigos",
       card2Desc: "Ritmos tropicales, actividades sociales y compartir buenos momentos.",
-      uccFooter: "UCC • ING. DE SOFTWARE (EN PROCESO) • PASTO",
-      senaFooter: "SENA • TÉCNICO EN SISTEMAS (CERTIFICADO)",
-      postitLocationTitle: "POST-IT // UBICACIÓN OFICIAL",
-      postitLocationCity: "Pasto, Colombia",
-      postitLocationQuote: "> Operando desde el suroccidente colombiano para el mundo.",
-      postitInterestsTitle: "STICKER PACK // ÁREAS DE INTERÉS",
-      coreStackTitle: "LENGUAJES & FRAMEWORKS // CORE STACK:",
-      archFocusTitle: "ENFOQUE DE ARQUITECTURA",
-      archFocusDesc: "Bajo acoplamiento, alta cohesión y testeabilidad por diseño sistemático.",
-      interestsList: ["Gastronomía", "Cine & Terror", "Comedia", "Música Tropical", "Arte", "Vida Social"],
+      playerCard: "PLAYER CARD",
+      classLabel: "CLASE",
+      classValue: "Ing. de Software",
+      semesterLabel: "SEMESTRE",
+      semesterValue: "5°",
+      baseLabel: "BASE",
+      baseValue: "Pasto, Colombia",
+      educationLabel: "FORMACIÓN",
+      educationValue: "UCC (en proceso) · SENA (titulado)",
+      interestsTitle: "INVENTARIO // INTERESES",
+      stackTitle: "HABILIDADES // STACK",
+      interestsList: ["Gastronomía", "Cine de terror", "Comedia", "Música tropical", "Arte", "Vida social"],
     },
-    // Projects
     projects: {
-      sectionTape: "// 02. PORTAFOLIO DE DESARROLLO & CÓDIGO",
-      title: "PROYECTOS DESTACADOS",
-      subtitle: "Soluciones de software completas, arquitecturas desacopladas y plataformas web en producción con código abierto.",
-      badgeCount: "4 PROYECTOS // PORTAFOLIO",
-      softwareModule: "SOFTWARE MODULE",
-      statusLive: "LIVE / DEPLOYED",
+      level: "NIVEL 2",
+      title: "MIS PROYECTOS",
+      subtitle: "Cada proyecto es un stage superado: soluciones de software con código y demo cuando están disponibles.",
+      stage: "STAGE",
+      statusLive: "EN VIVO",
       statusDev: "EN DESARROLLO",
-      techStackTitle: "TECNOLOGÍAS / STACK:",
-      btnCode: "VER CÓDIGO",
-      btnDemo: "DEMO EN VIVO",
-      codePrivate: "CÓDIGO PRIVADO",
-      demoSoon: "DEMO PRÓXIMAMENTE",
+      btnCode: "CÓDIGO",
+      btnDemo: "DEMO",
+      codePrivate: "PRIVADO",
+      demoSoon: "PRONTO",
       items: [
         {
           title: "Gridmind",
@@ -112,16 +116,14 @@ export const translations = {
         },
       ],
     },
-    // Experience
     experience: {
-      sectionTape: "// 03. REGISTRO CRONOLÓGICO & TRAYECTORIA",
-      title: "EXPERIENCIA & FORMACIÓN",
-      subtitle: "Tarjetas de archivo técnico que documentan mi recorrido en desarrollo de arquitectura limpia, proyectos de ingeniería y formación académica.",
-      workBadge: "FICHA // LABORAL",
-      academicBadge: "FICHA // ACADÉMICA",
-      workHeading: "💼 EXPERIENCIA LABORAL",
-      academicHeading: "🎓 EXPERIENCIA ACADÉMICA",
-      orgPrefix: "ORG:",
+      level: "NIVEL 3",
+      title: "EXPERIENCIA",
+      subtitle: "Registro de misiones: mi trayectoria laboral y académica, de lo más reciente a lo más antiguo.",
+      workHeading: "EXPERIENCIA LABORAL",
+      academicHeading: "EXPERIENCIA ACADÉMICA",
+      workBadge: "LABORAL",
+      academicBadge: "ACADÉMICA",
       items: [
         {
           type: "laboral",
@@ -145,244 +147,220 @@ export const translations = {
           type: "academica",
           title: "Ingeniería de Software",
           organization: "Universidad Cooperativa de Colombia",
-          period: "En Proceso (Pregrado)",
-          description: "Formación avanzada en arquitectura limpia, ingeniería de calidad de software (QA), patrones de diseño, arquitecturas distribuidas, bases de datos y desarrollo de soluciones con IA.",
+          period: "En curso (pregrado)",
+          description: "Formación en arquitectura limpia, ingeniería de calidad de software (QA), patrones de diseño, arquitecturas distribuidas, bases de datos y desarrollo de soluciones con IA.",
           badges: ["Clean Architecture", "Arquitectura de Software", "Bases de Datos", "QA"],
         },
         {
           type: "academica",
           title: "Técnico en Sistemas",
           organization: "SENA (Servicio Nacional de Aprendizaje)",
-          period: "Titulada // Certificado (Ficha 2492764)",
+          period: "Titulado (Ficha 2492764)",
           description: "Formación técnica titulada en mantenimiento preventivo y correctivo de hardware y software, ensamble de equipos, configuración de redes de datos, cableado estructurado e implementación de sistemas operativos.",
-          badges: ["Mantenimiento & Hardware", "Redes de Datos", "Soporte Técnico", "Sistemas Operativos"],
+          badges: ["Hardware", "Redes de Datos", "Soporte Técnico", "Sistemas Operativos"],
         },
       ],
     },
-    // Testimonials
     testimonials: {
-      sectionTape: "// 04. REFERENCIAS & TESTIMONIOS",
+      level: "NIVEL 4",
       title: "TESTIMONIOS",
-      subtitle: "Opiniones de colegas de ingeniería y desarrolladores que han compartido equipo y arquitectura conmigo.",
-      reservedTape: "// REGISTRO EN ESPERA // ACTUALIZACIÓN",
-      reservedTitle: "Buzón de Referencias en Proceso",
-      reservedDesc: "Espacio reservado para testimonios y referencias de colegas de ingeniería y líderes técnicos.",
-      reservedQuote: "“Próximamente nuevas reseñas y recomendaciones profesionales añadidas a este expediente.”",
+      subtitle: "Lo que dicen otros jugadores que han compartido equipo conmigo.",
+      emptyTitle: "INSERT COIN",
+      emptyDesc: "Este nivel se está cargando: pronto habrá testimonios de profesores y compañeros.",
     },
-    // Stack & Languages
     extra: {
-      sectionTape: "// 05. ARSENAL TÉCNICO & STACK",
-      title: "LENGUAJES, FRAMEWORKS & ENTORNO",
-      subtitle: "Catálogo completo de los lenguajes y frameworks que domino y utilizo en ingeniería de software, junto al banco de herramientas de mi flujo de trabajo.",
-      sub1Title: "LENGUAJES & FRAMEWORKS PRINCIPALES",
-      sub1Badge: "5 STACKS ACTIVOS",
-      verified: "VERIFICADO",
-      statusOk: "OK",
-      sub2Title: "ENTORNO DE TRABAJO, CLOUD & FRAMEWORKS",
-      sub2Badge: "HERRAMIENTAS CLAVE",
-      moduleActive: "MODULO // ACTIVO",
-      readyStatus: "READY",
+      level: "BONUS 1",
+      title: "STACK Y HERRAMIENTAS",
+      subtitle: "Mi inventario: los lenguajes y frameworks que uso, y las herramientas de mi flujo de trabajo.",
+      sub1Title: "LENGUAJES Y FRAMEWORKS",
+      sub2Title: "HERRAMIENTAS",
       langItems: [
         {
           name: "Java (Spring Boot)",
-          code: "JAVA",
-          category: "Backend & Arquitectura Empresarial",
-          description: "Desarrollo backend robusto con Spring Boot, APIs RESTful, inyección de dependencias, Hibernate/JPA, principios SOLID y Clean Architecture.",
-          level: "Producción & Core",
+          category: "Backend y arquitectura empresarial",
+          description: "Desarrollo backend con Spring Boot, APIs RESTful, inyección de dependencias, Hibernate/JPA, principios SOLID y Clean Architecture.",
+          level: "Core",
         },
         {
           name: "Python (FastAPI / IA)",
-          code: "PY",
-          category: "APIs, Microservicios & IA",
-          description: "Construcción de APIs de alto rendimiento con FastAPI, automatización de procesos, análisis de datos e integración de soluciones con IA.",
-          level: "Enfoque Ingeniería",
+          category: "APIs, microservicios e IA",
+          description: "APIs de alto rendimiento con FastAPI, automatización de procesos, análisis de datos e integración de soluciones con IA.",
+          level: "Ingeniería",
         },
         {
           name: "TypeScript (Next.js / React)",
-          code: "TS",
-          category: "Frontend & Full-Stack Escalable",
-          description: "Tipado estático estricto, React Server Components, Server Actions, App Router y arquitectura modular desacoplada en Next.js.",
-          level: "Producción & Core",
+          category: "Frontend y Full-Stack",
+          description: "Tipado estricto, React Server Components, Server Actions, App Router y arquitectura modular en Next.js.",
+          level: "Core",
         },
         {
           name: "JavaScript (Node.js / Express)",
-          code: "JS",
-          category: "Runtime & Servicios Asíncronos",
-          description: "Servicios backend en Node.js con Express, arquitectura basada en eventos, asincronía avanzada y APIs REST dinámicas.",
-          level: "Producción & Core",
+          category: "Runtime y servicios asíncronos",
+          description: "Servicios backend en Node.js con Express, arquitectura basada en eventos, asincronía y APIs REST.",
+          level: "Core",
         },
         {
           name: "SQL (PostgreSQL / MySQL)",
-          code: "SQL",
-          category: "Bases de Datos Relacionales",
-          description: "PostgreSQL, SQLite y MySQL: diseño entidad-relación, normalización de esquemas, consultas avanzadas, joins y transacciones ACID.",
-          level: "Gestión de Datos",
+          category: "Bases de datos relacionales",
+          description: "PostgreSQL, SQLite y MySQL: modelo entidad-relación, normalización, consultas avanzadas, joins y transacciones ACID.",
+          level: "Datos",
         },
       ],
       toolsItems: [
         {
           name: "Google Antigravity IDE",
-          category: "Agentic Engineering & Architecture",
-          description: "Entorno de desarrollo de última generación impulsado por agentes autónomos y análisis de contexto profundo.",
-          badge: "Primary Agentic IDE",
+          category: "Desarrollo con agentes",
+          description: "Entorno de desarrollo impulsado por agentes autónomos y análisis de contexto profundo.",
         },
         {
           name: "Cursor AI",
-          category: "AI-Assisted Development",
-          description: "Programación asistida por modelos de lenguaje para refactorización veloz y generación de pruebas unitarias.",
-          badge: "AI Pair Programming",
+          category: "Desarrollo asistido por IA",
+          description: "Programación asistida por modelos de lenguaje para refactorizar rápido y generar pruebas unitarias.",
         },
         {
           name: "VS Code",
-          category: "Core Code Editor",
+          category: "Editor de código",
           description: "Configuración personalizada con linters estrictos, debugging avanzado y extensiones de TypeScript.",
-          badge: "Production Setup",
         },
         {
           name: "Blender",
-          category: "3D Modeling & Rendering",
-          description: "Modelado low-poly, texturizado estilizado y exportación optimizada de mallas para experiencias web interactivas.",
-          badge: "Low-Poly & Assets",
+          category: "Modelado 3D",
+          description: "Modelado low-poly, texturizado estilizado y exportación optimizada de modelos para experiencias web.",
         },
         {
           name: "Next.js",
-          category: "Full-Stack Framework",
-          description: "App Router, Server Components, Server Actions, streaming y optimización extrema de rendimiento.",
-          badge: "Core Framework",
+          category: "Framework Full-Stack",
+          description: "App Router, Server Components, Server Actions, streaming y optimización de rendimiento.",
         },
         {
           name: "AWS",
-          category: "Cloud Infrastructure",
-          description: "Despliegues en la nube, arquitecturas serverless, S3, Lambda y configuración de dominios con alta disponibilidad.",
-          badge: "Cloud Computing",
+          category: "Infraestructura cloud",
+          description: "Despliegues en la nube, arquitecturas serverless, S3, Lambda y configuración de dominios.",
         },
       ],
     },
-    // Contact
     contact: {
-      sectionTape: "// 06. CANAL DE DESPACHO & TELEGRAMA",
-      title: "CONTACTO DIRECTO",
-      subtitle: "¿Tienes un proyecto, propuesta arquitectónica o desafío técnico? Envía un telegrama o conéctate en mis canales oficiales.",
-      transmissionTitle: "TRANSMISIÓN // PASTELERO",
-      stationBadge: "ESTAFETA: COL",
-      emailLabel: "CORREO ELECTRÓNICO OFICIAL",
-      socialLabel: "REDES & REPOSITORIOS OFICIALES",
+      level: "NIVEL 5",
+      title: "CONTACTO",
+      subtitle: "¿Tienes un proyecto o una propuesta? Escríbeme por el formulario o por mis canales directos.",
+      channelsTitle: "CANALES DIRECTOS",
+      emailLabel: "CORREO",
+      copyEmail: "Copiar correo",
+      githubAction: "IR ▶",
+      linkedinAction: "CONECTAR ▶",
       whatsappSub: "Mensaje directo",
-      whatsappAction: "CHATEAR →",
-      githubAction: "IR →",
-      linkedinAction: "CONECTAR →",
-      airMailStamp: "AIR-MAIL // PASTO NAR POSTAL SERVICE",
-      dispatchTitle: "FORMATO DE DESPACHO // TELEGRAMA",
-      priorityBadge: "PRIORIDAD ALTA",
-      successMsg: "¡Telegrama transmitido con éxito! Responderé a la brevedad posible.",
+      whatsappAction: "CHATEAR ▶",
+      formTitle: "ENVIAR MENSAJE",
+      nameLabel: "Nombre",
+      namePlaceholder: "Ej. Ada Lovelace",
+      emailFieldLabel: "Correo",
+      emailPlaceholder: "tucorreo@dominio.com",
+      messageLabel: "Mensaje",
+      messagePlaceholder: "Cuéntame sobre tu proyecto o propuesta...",
+      send: "ENVIAR",
+      sending: "ENVIANDO...",
+      successMsg: "¡Mensaje enviado! Te responderé lo antes posible.",
       mailtoMsg: "Se abrió tu aplicación de correo con el mensaje listo. Solo dale enviar.",
       errorMsg: "No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directo al correo.",
-      senderNameLabel: "Nombre del Remitente:",
-      senderNamePlaceholder: "Ej. Ada Lovelace",
-      emailReturnLabel: "Dirección de Retorno (Email):",
-      emailReturnPlaceholder: "tucorreo@dominio.com",
-      messageLabel: "Texto del Telegrama / Mensaje:",
-      messagePlaceholder: "Describe tu propuesta técnica, consulta de arquitectura o mensaje...",
-      sendingMsg: "TRANSMITIENDO TELEGRAMA...",
-      sendMsg: "ENVIAR TELEGRAMA // DESPACHAR AHORA",
     },
-    // Company Visits
     visits: {
-      sectionTape: "// 07. ANEXO EXTRA // INMERSIÓN INDUSTRIAL & VISITAS EMPRESARIALES",
+      level: "BONUS 2",
       title: "VISITAS EMPRESARIALES",
-      subtitle: "Recorridos técnicos, inmersión en cultura de ingeniería y conferencias en las empresas tecnológicas más influyentes de Medellín (Ruta Académica UCC - Ingeniería de Software).",
-      stampRoute: "5 EMPRESAS // RUTA MEDELLÍN TECH",
-      areaPrefix: "ÁREA:",
-      takeawaysHeader: "PUNTOS CLAVE DE APRENDIZAJE:",
+      subtitle: "Recorridos técnicos y conferencias en empresas de tecnología de Medellín (ruta académica UCC, Ingeniería de Software).",
+      areaPrefix: "ÁREA",
+      takeawaysHeader: "LOGROS DESBLOQUEADOS",
       photoLabel: "FOTO",
     },
-    // Footer
     footer: {
+      thanks: "¡GRACIAS POR JUGAR!",
       copyright: "Sebastián. Todos los derechos reservados.",
+      backToTop: "SUBIR",
       quickLinks: "ENLACES RÁPIDOS",
       madeWith: "Hecho con Next.js + Tailwind CSS",
-      backToTop: "SUBIR",
-      techSubline: "COTTON & NOIR PALETTE // TACTILE SCRAPBOOK • NEXT.JS 14 • TAILWIND CSS",
-      locationCleanArch: "PASTO, COLOMBIA • ARQUITECTURA LIMPIA",
+      location: "Pasto, Colombia",
     },
   },
   en: {
-    // Navbar
     nav: {
       home: "Home",
-      about: "About Me",
+      about: "About me",
       projects: "Projects",
       experience: "Experience",
       testimonials: "Testimonials",
-      workspace: "Stack & Tech",
+      workspace: "Stack",
       contact: "Contact",
       visits: "Visits",
-      letsTalk: "LET'S TALK // CONNECT",
-      startProject: "LET'S TALK // START PROJECT",
+      cta: "LET'S TALK!",
+      day: "DAY",
+      night: "NIGHT",
+      toDay: "Switch to day mode",
+      toNight: "Switch to night mode",
+      toLang: "Cambiar a español",
+      menu: "Open menu",
     },
-    // Hero
     hero: {
-      badgeOpenToWork: "SOFTWARE ENGINEERING // OPEN TO WORK",
-      labTag: "LAB: SEBASTIAN-SYS // 2026",
-      facultyTitle: "FACULTY OF ENGINEERING // TECHNICAL ID",
-      greeting: "HELLO, I'M",
-      name: "Sebastián",
-      verified: "VERIFIED",
-      role: ">_ Software Engineer & Lead Software Architect",
+      player: "PLAYER 1",
+      status: "OPEN TO PROJECTS",
+      greeting: "HI, I'M",
+      name: "SEBASTIÁN",
+      role: "Software Engineer & Software Architect",
+      tagline: "“Two parts water to one part rice; that's how I code, and that's why my rice turns out delicious.”",
       location: "PASTO, COLOMBIA",
-      academicSummary: "UCC (SW ENG) • SENA (TECH CERT)",
-      academicStatus: "UNDERGRAD IN PROGRESS // CERTIFIED GRADUATE",
-      manifestoHeader: "ARCHITECTURE_MANIFESTO // WORKSHOP NOTE",
-      manifestoQuote: "“Two parts water to one part rice; that's how I code, and that's why my rice turns out delicious.”",
-      manifestoAuthor: "— Sebastián // Lead Software Architect",
-      downloadCv: "DOWNLOAD CV // PDF",
+      downloadCv: "DOWNLOAD CV",
       viewProjects: "VIEW PROJECTS",
-      pillarsLabel: "// CORE PILLARS & CERTIFICATION",
-      pillar1Title: "Decoupled Layers",
-      pillar1Desc: "Domain, application, and infrastructure completely isolated.",
-      pillar2Title: "Quality & Testing",
-      pillar2Desc: "Strict TDD and code coverage >95%.",
-      pillar3Title: "Clean Architecture",
-      pillar3Desc: "High cohesion, low coupling, and testability by design.",
-      specsTitle: "SPEC: HARDWARE_SPECS",
-      specsDesc: "Software built with modular patterns, event-driven architectures, and high-performance Next.js App Router.",
+      avatarAlt: "Pixel art avatar of Sebastián",
     },
-    // About
+    game: {
+      score: "SCORE",
+      gems: "GEMS",
+      clickToPlay: "CLICK TO PLAY",
+      hint: "Move with the arrow keys or WASD (on mobile, use the buttons). Collect the gems to unlock each section.",
+      unlocked: "UNLOCKED!",
+      go: "GO",
+      complete: "LEVEL CLEAR!",
+      completeDesc: "You collected every gem. Now explore the whole portfolio.",
+      restart: "PLAY AGAIN",
+      goals: "GOALS",
+      controls: "Game controls",
+      up: "Move up",
+      down: "Move down",
+      left: "Move left",
+      right: "Move right",
+      ariaBoard: "Mini game: use the arrow keys or WASD to move your character and collect gems",
+    },
     about: {
-      sectionTape: "// 01. DOSSIER & PHILOSOPHY",
-      folderTab: "DOSSIER // SEBAS-SYS-08",
+      level: "LEVEL 1",
       title: "ABOUT ME",
-      badgePasto: "PASTO // COL",
+      subtitle: "Player profile: who I am, what I study and what I enjoy.",
       mainBio: "I am currently pursuing a degree in Software Engineering at Universidad Cooperativa de Colombia. Beyond academics, my core passions include culinary arts, visual arts, and cinema, with a special love for horror and comedy genres. I also enjoy tropical music and social activities with friends.",
-      card1Title: "Gastronomy, Art & Cinema",
-      card1Desc: "Horror and comedy cinema, culinary passion, and artistic appreciation.",
-      card2Title: "Tropical Music & Friends",
-      card2Desc: "Tropical rhythms, social hangouts, and sharing good moments.",
-      uccFooter: "UCC • SOFTWARE ENG (IN PROGRESS) • PASTO",
-      senaFooter: "SENA • SYSTEMS TECHNICIAN (CERTIFIED)",
-      postitLocationTitle: "POST-IT // OFFICIAL LOCATION",
-      postitLocationCity: "Pasto, Colombia",
-      postitLocationQuote: "> Operating from southwestern Colombia to the world.",
-      postitInterestsTitle: "STICKER PACK // PASSIONS & INTERESTS",
-      coreStackTitle: "LANGUAGES & FRAMEWORKS // CORE STACK:",
-      archFocusTitle: "ARCHITECTURE FOCUS",
-      archFocusDesc: "Low coupling, high cohesion, and testability through systematic design.",
-      interestsList: ["Gastronomy", "Cinema & Horror", "Comedy", "Tropical Music", "Art", "Social Life"],
+      card1Title: "Food, art & cinema",
+      card1Desc: "Horror and comedy films, culinary passion and artistic appreciation.",
+      card2Title: "Tropical music & friends",
+      card2Desc: "Tropical rhythms, social hangouts and sharing good moments.",
+      playerCard: "PLAYER CARD",
+      classLabel: "CLASS",
+      classValue: "Software Eng.",
+      semesterLabel: "SEMESTER",
+      semesterValue: "5th",
+      baseLabel: "BASE",
+      baseValue: "Pasto, Colombia",
+      educationLabel: "EDUCATION",
+      educationValue: "UCC (in progress) · SENA (certified)",
+      interestsTitle: "INVENTORY // INTERESTS",
+      stackTitle: "SKILLS // STACK",
+      interestsList: ["Gastronomy", "Horror films", "Comedy", "Tropical music", "Art", "Social life"],
     },
-    // Projects
     projects: {
-      sectionTape: "// 02. CODE PORTFOLIO & DEVELOPMENT",
-      title: "FEATURED PROJECTS",
-      subtitle: "Complete software solutions, decoupled architectures, and production-ready web platforms with open source code.",
-      badgeCount: "4 PROJECTS // PORTFOLIO",
-      softwareModule: "SOFTWARE MODULE",
-      statusLive: "LIVE / DEPLOYED",
+      level: "LEVEL 2",
+      title: "MY PROJECTS",
+      subtitle: "Every project is a cleared stage: software solutions with code and a live demo when available.",
+      stage: "STAGE",
+      statusLive: "LIVE",
       statusDev: "IN DEVELOPMENT",
-      techStackTitle: "TECH STACK / MODULES:",
-      btnCode: "VIEW CODE",
-      btnDemo: "LIVE DEMO",
-      codePrivate: "PRIVATE CODE",
-      demoSoon: "DEMO COMING SOON",
+      btnCode: "CODE",
+      btnDemo: "DEMO",
+      codePrivate: "PRIVATE",
+      demoSoon: "SOON",
       items: [
         {
           title: "Gridmind",
@@ -402,16 +380,14 @@ export const translations = {
         },
       ],
     },
-    // Experience
     experience: {
-      sectionTape: "// 03. CHRONOLOGICAL LOG & TIMELINE",
-      title: "EXPERIENCE & EDUCATION",
-      subtitle: "Technical index cards documenting my journey through clean architecture development, engineering projects, and academic background.",
-      workBadge: "RECORD // PROFESSIONAL",
-      academicBadge: "RECORD // ACADEMIC",
-      workHeading: "💼 WORK EXPERIENCE",
-      academicHeading: "🎓 ACADEMIC BACKGROUND",
-      orgPrefix: "ORG:",
+      level: "LEVEL 3",
+      title: "EXPERIENCE",
+      subtitle: "Quest log: my work and academic journey, from most recent to oldest.",
+      workHeading: "WORK EXPERIENCE",
+      academicHeading: "ACADEMIC BACKGROUND",
+      workBadge: "WORK",
+      academicBadge: "ACADEMIC",
       items: [
         {
           type: "laboral",
@@ -435,165 +411,137 @@ export const translations = {
           type: "academica",
           title: "Software Engineering",
           organization: "Universidad Cooperativa de Colombia",
-          period: "In Progress (Undergrad)",
-          description: "Advanced training in clean architecture, software quality engineering (QA), design patterns, distributed architectures, databases, and AI solutions.",
+          period: "In progress (undergrad)",
+          description: "Training in clean architecture, software quality engineering (QA), design patterns, distributed architectures, databases, and AI solutions.",
           badges: ["Clean Architecture", "Software Architecture", "Databases", "QA"],
         },
         {
           type: "academica",
           title: "Systems Technician",
           organization: "SENA (National Training Service)",
-          period: "Certified Graduate (Ficha 2492764)",
-          description: "Certified technical education in hardware and software maintenance, workstation assembly, network routing, structured cabling, and OS deployment.",
-          badges: ["Hardware & Maintenance", "Data Networks", "Technical Support", "Operating Systems"],
+          period: "Certified (Ficha 2492764)",
+          description: "Certified technical education in hardware and software maintenance, workstation assembly, network setup, structured cabling, and OS deployment.",
+          badges: ["Hardware", "Data Networks", "Technical Support", "Operating Systems"],
         },
       ],
     },
-    // Testimonials
     testimonials: {
-      sectionTape: "// 04. ENDORSEMENTS & TESTIMONIALS",
+      level: "LEVEL 4",
       title: "TESTIMONIALS",
-      subtitle: "Perspectives from engineering peers and software developers who have collaborated with me.",
-      reservedTape: "// STANDBY LOG // QUEUED",
-      reservedTitle: "Reference Inbox In Progress",
-      reservedDesc: "Dedicated space for endorsements and reviews from engineering colleagues and tech leads.",
-      reservedQuote: "“New professional reviews and recommendations will be added to this dossier shortly.”",
+      subtitle: "What other players who have teamed up with me say.",
+      emptyTitle: "INSERT COIN",
+      emptyDesc: "This level is loading: testimonials from professors and classmates are coming soon.",
     },
-    // Stack & Languages
     extra: {
-      sectionTape: "// 05. TECHNICAL ARSENAL & STACK",
-      title: "LANGUAGES, FRAMEWORKS & WORKSPACE",
-      subtitle: "Comprehensive directory of programming languages and frameworks I master, alongside the toolchain powering my daily workflow.",
-      sub1Title: "CORE LANGUAGES & FRAMEWORKS",
-      sub1Badge: "5 ACTIVE STACKS",
-      verified: "VERIFIED",
-      statusOk: "OK",
-      sub2Title: "WORKSPACE, CLOUD & FRAMEWORKS",
-      sub2Badge: "KEY TOOLCHAIN",
-      moduleActive: "MODULE // ACTIVE",
-      readyStatus: "READY",
+      level: "BONUS 1",
+      title: "STACK & TOOLS",
+      subtitle: "My inventory: the languages and frameworks I use, and the tools in my workflow.",
+      sub1Title: "LANGUAGES & FRAMEWORKS",
+      sub2Title: "TOOLS",
       langItems: [
         {
           name: "Java (Spring Boot)",
-          code: "JAVA",
-          category: "Enterprise Backend & Architecture",
-          description: "Robust backend development with Spring Boot, RESTful APIs, dependency injection, Hibernate/JPA, SOLID principles, and Clean Architecture.",
-          level: "Production & Core",
+          category: "Enterprise backend & architecture",
+          description: "Backend development with Spring Boot, RESTful APIs, dependency injection, Hibernate/JPA, SOLID principles, and Clean Architecture.",
+          level: "Core",
         },
         {
           name: "Python (FastAPI / AI)",
-          code: "PY",
-          category: "APIs, Microservices & AI",
-          description: "High-performance API development with FastAPI, workflow automation, data analysis, and AI solution integration.",
-          level: "Engineering Focus",
+          category: "APIs, microservices & AI",
+          description: "High-performance APIs with FastAPI, workflow automation, data analysis, and AI integration.",
+          level: "Engineering",
         },
         {
           name: "TypeScript (Next.js / React)",
-          code: "TS",
-          category: "Scalable Frontend & Full-Stack",
-          description: "Strict static typing, React Server Components, Server Actions, App Router, and decoupled architecture in Next.js.",
-          level: "Production & Core",
+          category: "Frontend & Full-Stack",
+          description: "Strict typing, React Server Components, Server Actions, App Router, and modular architecture in Next.js.",
+          level: "Core",
         },
         {
           name: "JavaScript (Node.js / Express)",
-          code: "JS",
-          category: "Runtime & Async Services",
-          description: "Backend services in Node.js with Express, event-driven architecture, advanced concurrency, and dynamic REST APIs.",
-          level: "Production & Core",
+          category: "Runtime & async services",
+          description: "Node.js backend services with Express, event-driven architecture, async patterns, and REST APIs.",
+          level: "Core",
         },
         {
           name: "SQL (PostgreSQL / MySQL)",
-          code: "SQL",
-          category: "Relational Databases",
-          description: "PostgreSQL, SQLite, and MySQL: entity-relationship design, schema normalization, optimized queries, joins, and ACID transactions.",
-          level: "Data Management",
+          category: "Relational databases",
+          description: "PostgreSQL, SQLite, and MySQL: entity-relationship design, normalization, advanced queries, joins, and ACID transactions.",
+          level: "Data",
         },
       ],
       toolsItems: [
         {
           name: "Google Antigravity IDE",
-          category: "Agentic Engineering & Architecture",
-          description: "Next-generation software development environment powered by autonomous agents and deep contextual analysis.",
-          badge: "Primary Agentic IDE",
+          category: "Agentic development",
+          description: "Development environment powered by autonomous agents and deep context analysis.",
         },
         {
           name: "Cursor AI",
-          category: "AI-Assisted Development",
-          description: "LLM-assisted programming for rapid refactoring, test generation, and intelligent scaffolding.",
-          badge: "AI Pair Programming",
+          category: "AI-assisted development",
+          description: "LLM-assisted programming for fast refactoring and unit test generation.",
         },
         {
           name: "VS Code",
-          category: "Core Code Editor",
-          description: "Custom configuration with strict linters, advanced debugging, and rich TypeScript tooling.",
-          badge: "Production Setup",
+          category: "Code editor",
+          description: "Custom setup with strict linters, advanced debugging, and TypeScript tooling.",
         },
         {
           name: "Blender",
-          category: "3D Modeling & Rendering",
-          description: "Low-poly modeling, stylized texturing, and optimized mesh export for interactive web 3D experiences.",
-          badge: "Low-Poly & Assets",
+          category: "3D modeling",
+          description: "Low-poly modeling, stylized texturing, and optimized model export for web experiences.",
         },
         {
           name: "Next.js",
-          category: "Full-Stack Framework",
-          description: "App Router, Server Components, Server Actions, streaming, and extreme performance optimization.",
-          badge: "Core Framework",
+          category: "Full-Stack framework",
+          description: "App Router, Server Components, Server Actions, streaming, and performance optimization.",
         },
         {
           name: "AWS",
-          category: "Cloud Infrastructure",
-          description: "Cloud deployments, serverless architectures, S3, Lambda, and high-availability domain setup.",
-          badge: "Cloud Computing",
+          category: "Cloud infrastructure",
+          description: "Cloud deployments, serverless architectures, S3, Lambda, and domain setup.",
         },
       ],
     },
-    // Contact
     contact: {
-      sectionTape: "// 06. DISPATCH CHANNEL & TELEGRAM",
-      title: "DIRECT CONTACT",
-      subtitle: "Have a project, architectural proposal, or technical challenge? Send a telegram or connect via official channels.",
-      transmissionTitle: "TRANSMISSION // STATION",
-      stationBadge: "POST: COL",
-      emailLabel: "OFFICIAL DIRECT EMAIL",
-      socialLabel: "OFFICIAL CHANNELS & REPOSITORIES",
+      level: "LEVEL 5",
+      title: "CONTACT",
+      subtitle: "Have a project or a proposal? Write me through the form or my direct channels.",
+      channelsTitle: "DIRECT CHANNELS",
+      emailLabel: "EMAIL",
+      copyEmail: "Copy email",
+      githubAction: "GO ▶",
+      linkedinAction: "CONNECT ▶",
       whatsappSub: "Direct message",
-      whatsappAction: "CHAT NOW →",
-      githubAction: "VISIT →",
-      linkedinAction: "CONNECT →",
-      airMailStamp: "AIR-MAIL // PASTO NAR POSTAL SERVICE",
-      dispatchTitle: "DISPATCH FORM // TELEGRAM",
-      priorityBadge: "HIGH PRIORITY",
-      successMsg: "Telegram transmitted successfully! I will reply as soon as possible.",
+      whatsappAction: "CHAT ▶",
+      formTitle: "SEND A MESSAGE",
+      nameLabel: "Name",
+      namePlaceholder: "e.g. Ada Lovelace",
+      emailFieldLabel: "Email",
+      emailPlaceholder: "youremail@domain.com",
+      messageLabel: "Message",
+      messagePlaceholder: "Tell me about your project or proposal...",
+      send: "SEND",
+      sending: "SENDING...",
+      successMsg: "Message sent! I will reply as soon as possible.",
       mailtoMsg: "Your email app opened with the message ready. Just hit send.",
       errorMsg: "The message could not be sent. Please try again or email me directly.",
-      senderNameLabel: "Sender's Name:",
-      senderNamePlaceholder: "e.g. Ada Lovelace",
-      emailReturnLabel: "Return Address (Email):",
-      emailReturnPlaceholder: "youremail@domain.com",
-      messageLabel: "Telegram Text / Message:",
-      messagePlaceholder: "Describe your technical inquiry, project proposal, or message...",
-      sendingMsg: "TRANSMITTING TELEGRAM...",
-      sendMsg: "SEND TELEGRAM // DISPATCH NOW",
     },
-    // Company Visits
     visits: {
-      sectionTape: "// 07. EXTRA ANNEX // INDUSTRIAL IMMERSION & CORPORATE VISITS",
-      title: "CORPORATE VISITS",
-      subtitle: "Technical tours, engineering culture immersion, and conferences across the most influential tech companies in Medellín (UCC Software Engineering Academic Tour).",
-      stampRoute: "5 COMPANIES // MEDELLÍN TECH HUB",
-      areaPrefix: "AREA:",
-      takeawaysHeader: "KEY LEARNING TAKEAWAYS:",
+      level: "BONUS 2",
+      title: "COMPANY VISITS",
+      subtitle: "Technical tours and talks at tech companies in Medellín (UCC Software Engineering academic route).",
+      areaPrefix: "AREA",
+      takeawaysHeader: "ACHIEVEMENTS UNLOCKED",
       photoLabel: "PHOTO",
     },
-    // Footer
     footer: {
+      thanks: "THANKS FOR PLAYING!",
       copyright: "Sebastián. All rights reserved.",
+      backToTop: "TOP",
       quickLinks: "QUICK LINKS",
       madeWith: "Made with Next.js + Tailwind CSS",
-      backToTop: "BACK TO TOP",
-      techSubline: "COTTON & NOIR PALETTE // TACTILE SCRAPBOOK • NEXT.JS 14 • TAILWIND CSS",
-      locationCleanArch: "PASTO, COLOMBIA • CLEAN ARCHITECTURE",
+      location: "Pasto, Colombia",
     },
   },
 };
@@ -603,53 +551,48 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Language>("es");
   const [theme, setThemeState] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    // Read saved preferences from localStorage
-    const savedLang = localStorage.getItem("sebas_lang") as Language;
-    if (savedLang === "es" || savedLang === "en") {
-      setLangState(savedLang);
-    }
-    const savedTheme = localStorage.getItem("sebas_theme") as Theme;
-    if (savedTheme === "dark" || savedTheme === "light") {
-      setThemeState(savedTheme);
-      if (savedTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
+    // Leer preferencias guardadas
+    try {
+      const savedLang = localStorage.getItem("sebas_lang");
+      if (savedLang === "es" || savedLang === "en") {
+        setLangState(savedLang);
+        document.documentElement.lang = savedLang;
       }
-    } else {
-      // Default light (cotton)
-      document.documentElement.classList.remove("dark");
+      const savedTheme = localStorage.getItem("sebas_theme");
+      if (savedTheme === "dark" || savedTheme === "light") {
+        setThemeState(savedTheme);
+        document.documentElement.classList.toggle("dark", savedTheme === "dark");
+      }
+    } catch {
+      /* sin almacenamiento disponible */
     }
   }, []);
 
   const setLang = (newLang: Language) => {
     setLangState(newLang);
-    localStorage.setItem("sebas_lang", newLang);
-  };
-
-  const toggleLang = () => {
-    const nextLang = lang === "es" ? "en" : "es";
-    setLang(nextLang);
-  };
-
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
-    localStorage.setItem("sebas_theme", newTheme);
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    document.documentElement.lang = newLang;
+    try {
+      localStorage.setItem("sebas_lang", newLang);
+    } catch {
+      /* sin almacenamiento disponible */
     }
   };
 
-  const toggleTheme = () => {
-    const nextTheme = theme === "light" ? "dark" : "light";
-    setTheme(nextTheme);
+  const toggleLang = () => setLang(lang === "es" ? "en" : "es");
+
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    try {
+      localStorage.setItem("sebas_theme", newTheme);
+    } catch {
+      /* sin almacenamiento disponible */
+    }
   };
+
+  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
   const t = (path: string) => {
     const keys = path.split(".");
@@ -665,17 +608,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AppContext.Provider
-      value={{
-        lang,
-        setLang,
-        toggleLang,
-        theme,
-        setTheme,
-        toggleTheme,
-        t,
-      }}
-    >
+    <AppContext.Provider value={{ lang, setLang, toggleLang, theme, setTheme, toggleTheme, t }}>
       {children}
     </AppContext.Provider>
   );
@@ -688,4 +621,3 @@ export function useApp() {
   }
   return context;
 }
-
