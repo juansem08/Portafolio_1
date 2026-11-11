@@ -15,11 +15,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      {/* Orden de la guía: Proyectos → Testimonios → Experiencia → Contacto → Sección adicional → Pie */}
       <Projects />
-      <Experience />
       <Testimonials />
-      <ExtraSection />
+      <Experience />
       <Contact />
+      <ExtraSection />
       <CompanyVisits />
       <Footer />
     </main>

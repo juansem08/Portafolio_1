@@ -1,6 +1,7 @@
 "use client";
 
-import { Download, Terminal, ShieldCheck, Layers, Sparkles, Cpu } from "lucide-react";
+import Image from "next/image";
+import { Download, ShieldCheck, Layers, Sparkles, Cpu } from "lucide-react";
 import { Tape, BadgeClip, Pushpin, DoodleArrow, MarkerScratch, Barcode } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
 
@@ -73,9 +74,16 @@ export default function Hero() {
 
                   {/* ID Card Photo Frame / Wireframe Silhouette */}
                   <div className="relative shrink-0 rotate-2 group-hover:rotate-0 transition-transform">
-                    <div className="w-24 h-28 sm:w-28 sm:h-32 bg-[#FAF9F5] dark:bg-[#121010] border-2 border-[#1B1717] dark:border-[#810100] p-1.5 shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100] flex flex-col items-center justify-between">
-                      <div className="w-full h-20 bg-[#EDEBDD] dark:bg-[#1B1717] border border-[#1B1717]/30 dark:border-[#EDEBDD]/20 flex items-center justify-center relative overflow-hidden">
-                        <Terminal className="w-10 h-10 text-[#810100]" />
+                    <div className="w-32 h-40 sm:w-36 sm:h-44 bg-[#FAF9F5] dark:bg-[#121010] border-2 border-[#1B1717] dark:border-[#810100] p-1.5 shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100] flex flex-col items-center justify-between gap-1">
+                      <div className="w-full flex-1 bg-[#EDEBDD] dark:bg-[#1B1717] border border-[#1B1717]/30 dark:border-[#EDEBDD]/20 relative overflow-hidden">
+                        <Image
+                          src="/images/sebastian.jpg"
+                          alt="Foto de Sebastián Mayorga"
+                          fill
+                          priority
+                          sizes="144px"
+                          className="object-cover object-[50%_30%]"
+                        />
                         <div className="absolute top-1 right-1 text-[8px] font-mono text-[#EDEBDD] font-bold bg-[#810100] px-1">
                           QA OK
                         </div>

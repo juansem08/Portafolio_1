@@ -11,6 +11,7 @@ interface TimelineItem {
   period: string;
   description: string;
   badges: string[];
+  details?: string[];
   github?: string;
   demo?: string;
 }
@@ -109,6 +110,20 @@ export default function Experience() {
                         <p className="text-sm sm:text-base text-neutral-800 dark:text-neutral-300 leading-relaxed font-sans mb-6">
                           {item.description}
                         </p>
+
+                        {item.details && item.details.length > 0 && (
+                          <ul className="-mt-3 mb-6 space-y-2">
+                            {item.details.map((detail) => (
+                              <li
+                                key={detail}
+                                className="flex items-start gap-2 text-sm text-neutral-800 dark:text-neutral-300 font-sans"
+                              >
+                                <span className="mt-1.5 w-2 h-2 shrink-0 bg-[#810100] rotate-45" />
+                                <span>{detail}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
 
                         {/* Badges as Stamped Tags */}
                         <div className="flex flex-wrap gap-2 pt-3 border-t border-[#1B1717]/20 dark:border-[#EDEBDD]/20">

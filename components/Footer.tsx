@@ -16,10 +16,10 @@ export default function Footer() {
     { label: t("nav.home"), href: "#inicio" },
     { label: t("nav.about"), href: "#about" },
     { label: t("nav.projects"), href: "#projects" },
-    { label: t("nav.experience"), href: "#experience" },
     { label: t("nav.testimonials"), href: "#testimonials" },
-    { label: t("nav.workspace"), href: "#workspace" },
+    { label: t("nav.experience"), href: "#experience" },
     { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.workspace"), href: "#workspace" },
     { label: t("nav.visits"), href: "#visits" },
   ];
 

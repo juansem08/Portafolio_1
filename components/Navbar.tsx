@@ -22,10 +22,10 @@ export default function Navbar() {
   const navLinks = [
     { label: t("nav.about"), href: "#about", rot: "-rotate-1" },
     { label: t("nav.projects"), href: "#projects", rot: "rotate-1" },
-    { label: t("nav.experience"), href: "#experience", rot: "-rotate-1" },
     { label: t("nav.testimonials"), href: "#testimonials", rot: "rotate-2" },
-    { label: t("nav.workspace"), href: "#workspace", rot: "-rotate-2" },
+    { label: t("nav.experience"), href: "#experience", rot: "-rotate-1" },
     { label: t("nav.contact"), href: "#contact", rot: "rotate-1" },
+    { label: t("nav.workspace"), href: "#workspace", rot: "-rotate-2" },
     { label: t("nav.visits"), href: "#visits", rot: "-rotate-1" },
   ];
 
@@ -42,7 +42,7 @@ export default function Navbar() {
           
           {/* Logo / Archive Tag with Metallic Paperclip */}
           <Link
-            href="#"
+            href="#inicio"
             className="group relative flex items-center gap-2 select-none -rotate-1 hover:rotate-0 transition-transform"
           >
             <div className="absolute -top-3 -left-2 z-20 pointer-events-none">

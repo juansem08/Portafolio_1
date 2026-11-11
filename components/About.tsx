@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { MapPin, Sparkles, Utensils, Music, GraduationCap, Layers } from "lucide-react";
 import { Tape, Paperclip, Pushpin } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
@@ -119,7 +120,31 @@ export default function About() {
 
           {/* Right Column: Sticky Post-It Notes & Quick Facts (Lg col 5) */}
           <div className="lg:col-span-5 space-y-6">
-            
+
+            {/* Polaroid con foto */}
+            <figure className="relative mx-auto max-w-xs -rotate-2 hover:rotate-0 transition-transform duration-200">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
+                <Tape variant="masking" className="text-[10px] font-mono font-bold">
+                  {t("about.photoCaption")}
+                </Tape>
+              </div>
+              <div className="p-3 pb-4 bg-[#FFFFFF] dark:bg-[#1E1B18] border-2 border-[#1B1717] dark:border-[#810100] shadow-[6px_6px_0px_#1B1717] dark:shadow-[6px_6px_0px_#810100]">
+                <div className="relative aspect-[4/5] overflow-hidden border border-[#1B1717]/30 dark:border-[#EDEBDD]/20">
+                  <Image
+                    src="/images/sebastian.jpg"
+                    alt="Foto de Sebastián Mayorga"
+                    fill
+                    sizes="(max-width: 1024px) 320px, 320px"
+                    className="object-cover object-[50%_30%]"
+                  />
+                </div>
+                <figcaption className="mt-3 flex items-center justify-center gap-2 font-mono text-xs font-black text-[#1B1717] dark:text-[#EDEBDD]">
+                  <GraduationCap className="w-4 h-4 text-[#810100]" />
+                  {t("about.semesterLabel")}
+                </figcaption>
+              </div>
+            </figure>
+
             {/* Post-it Note 1: Location (Pasto, Colombia) with Pushpin */}
             <div className="relative rotate-2 hover:rotate-0 transition-transform duration-200">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 pointer-events-none">

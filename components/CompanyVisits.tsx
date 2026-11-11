@@ -146,7 +146,7 @@ export default function CompanyVisits() {
   ];
 
   return (
-    <section id="visits" className="py-20 relative select-none">
+    <section id="visits" className="py-20 relative select-none overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
