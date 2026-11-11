@@ -7,6 +7,7 @@ import {
   ExternalLink,
   Layers,
   Clock,
+  Download,
   Wrench,
   ScanText,
   BarChart3,
@@ -118,10 +119,16 @@ export default function Projects() {
                         <div className="flex items-center gap-1.5 px-2.5 py-0.5 bg-[#EDEBDD] dark:bg-[#121010] border border-[#1B1717] dark:border-[#810100] text-[10px] font-mono font-bold text-[#1B1717] dark:text-[#EDEBDD] shadow-sm">
                           <span
                             className={`w-1.5 h-1.5 rounded-full ${
-                              project.demo ? "bg-emerald-600 animate-pulse" : "bg-amber-500"
+                              project.demo || project.download ? "bg-emerald-600 animate-pulse" : "bg-amber-500"
                             }`}
                           />
-                          <span>{project.demo ? t("projects.statusLive") : t("projects.statusCode")}</span>
+                          <span>
+                            {project.demo
+                              ? t("projects.statusLive")
+                              : project.download
+                                ? t("projects.statusDownload")
+                                : t("projects.statusCode")}
+                          </span>
                         </div>
                       </div>
 
@@ -181,6 +188,16 @@ export default function Projects() {
                           >
                             <span>{t("projects.btnDemo")}</span>
                             <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        ) : project.download ? (
+                          <a
+                            href={project.download}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-[#810100] text-[#EDEBDD] hover:bg-[#9E0201] text-xs font-display font-black tracking-wide border-2 border-[#1B1717] dark:border-[#EDEBDD]/40 shadow-[3px_3px_0px_#1B1717] dark:shadow-[3px_3px_0px_#810100] transition-all hover:scale-105 active:scale-95"
+                          >
+                            <Download className="w-3.5 h-3.5" />
+                            <span>{t("projects.btnDownload")}</span>
                           </a>
                         ) : (
                           <span className="inline-flex items-center gap-2 px-3.5 py-2.5 text-xs font-mono font-bold text-neutral-500 dark:text-neutral-400 border-2 border-dashed border-[#1B1717]/40 dark:border-[#EDEBDD]/30">

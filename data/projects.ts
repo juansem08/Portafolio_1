@@ -25,6 +25,8 @@ export interface Project {
   repos: ProjectLink[];
   // Demo en vivo. Si queda vacío, la tarjeta muestra "Demo próximamente".
   demo?: string;
+  // Descarga del programa (página de releases de GitHub) para proyectos que no son web.
+  download?: string;
 }
 
 export const projects: Project[] = [
@@ -55,6 +57,8 @@ export const projects: Project[] = [
     imageFit: "contain",
     imageBg: "linear-gradient(135deg,#FBF1E4,#EBC79B)",
     repos: [{ label: "Código", url: "https://github.com/juansem08/Clasificador_Automtico__Rese-asas_Comentarios" }],
+    // Instaladores para Windows, macOS y Linux
+    download: "https://github.com/juansem08/Clasificador_Automtico__Rese-asas_Comentarios/releases",
   },
   {
     title: "Noticias del Día — Garmin Forerunner 165",
@@ -95,5 +99,6 @@ export const projects: Project[] = [
     image: "/images/projects/demencia.jpg",
     imagePosition: "center",
     repos: [{ label: "Código", url: "https://github.com/CV17d/demencia_ae_limite" }],
+    download: "https://github.com/CV17d/demencia_ae_limite/releases/tag/v1.0.0",
   },
 ];
