@@ -147,6 +147,39 @@ body {
     background-size: 100% 100%, 44px 30px, 44px 30px, 100% 100%;
   }
 
+  /* Pasillo del laboratorio: fondo de las secciones de "Sobre mí" hacia abajo */
+  .corridor {
+    position: relative;
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(ellipse 55% 260px at 50% 0, rgba(200, 240, 190, 0.075), transparent 70%),
+      linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: 100% 820px, 44px 30px, 44px 30px;
+  }
+  html:not(.dark) .corridor {
+    background-image:
+      radial-gradient(ellipse 55% 260px at 50% 0, rgba(255, 255, 230, 0.6), transparent 70%),
+      linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  }
+
+  /* Tubos a los lados del pasillo */
+  .pipe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 14px;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(180deg, transparent 0 300px, #0b0f0d 300px 312px),
+      linear-gradient(90deg, #121815, #2c3631 45%, #121815);
+    opacity: 0.8;
+  }
+  html:not(.dark) .pipe {
+    opacity: 0.35;
+  }
+
   /* Franja de piso a cuadros entre secciones */
   .checker-band {
     height: 28px;
@@ -256,6 +289,10 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.15; }
 }
+@keyframes walk {
+  0% { transform: translateX(-120%); opacity: 1; }
+  100% { transform: translateX(110vw); opacity: 1; }
+}
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -270,6 +307,7 @@ body {
 .animate-bulb { animation: bulb 5s linear infinite; }
 .animate-sway { animation: sway 6s ease-in-out infinite; transform-origin: top center; }
 .animate-led { animation: led 1.4s steps(2) infinite; }
+.animate-walk { animation: walk 16s linear 0.5s infinite; transform: translateX(-120%); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -280,5 +318,6 @@ body {
   .animate-bulb,
   .animate-sway,
   .animate-led { animation: none; }
+  .animate-walk { animation: none; transform: translateX(40vw); }
   .animate-creep { animation-duration: 1ms; }
 }

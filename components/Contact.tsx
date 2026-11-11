@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Mail, Github, Linkedin, Send, CheckCircle2, AlertTriangle, Copy, Check } from "lucide-react";
 import { Section, SectionHeader, Feed, CamButton, WhatsAppIcon } from "./night/ui";
+import Lurker from "./night/Lurker";
 import { useApp } from "@/context/AppContext";
 import { contactInfo, whatsappUrl } from "@/data/contact";
 
@@ -77,7 +78,7 @@ export default function Contact() {
   ].filter((c) => c.show);
 
   return (
-    <Section id="contact">
+    <Section id="contact" lurker={<Lurker creature="segfault" variant="eyes-right" time="04:18 AM" top="10%" />}>
       <SectionHeader cam={t("contact.level")} room={t("rooms.contact")} title={t("contact.title")} subtitle={t("contact.subtitle")} />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">

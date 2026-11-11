@@ -1,6 +1,7 @@
 "use client";
 
 import { Section, SectionHeader, Feed } from "./night/ui";
+import Lurker from "./night/Lurker";
 import { useApp } from "@/context/AppContext";
 
 interface Testimonial {
@@ -17,7 +18,7 @@ export default function Testimonials() {
   const { t } = useApp();
 
   return (
-    <Section id="testimonials">
+    <Section id="testimonials" lurker={<Lurker creature="notfound" variant="peek-left" time="03:04 AM" top="20%" />}>
       <SectionHeader cam={t("testimonials.level")} room={t("rooms.testimonials")} title={t("testimonials.title")} subtitle={t("testimonials.subtitle")} />
 
       {testimonials.length > 0 ? (

@@ -1,9 +1,11 @@
 import type { ReactNode } from "react";
 
-export function Section({ id, children }: { id: string; children: ReactNode }) {
+export function Section({ id, children, lurker }: { id: string; children: ReactNode; lurker?: ReactNode }) {
   return (
-    <section id={id} className="py-16 sm:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
+    <section id={id} className="relative py-16 sm:py-24">
+      {/* Personaje que aparece detrás del contenido */}
+      {lurker}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
 }

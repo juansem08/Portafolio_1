@@ -3,6 +3,7 @@
 import { projects } from "@/data/projects";
 import { Github, ExternalLink, Lock, WifiOff } from "lucide-react";
 import { Section, SectionHeader, CamButton, Tag, RecDot } from "./night/ui";
+import Lurker from "./night/Lurker";
 import { useApp } from "@/context/AppContext";
 
 export default function Projects() {
@@ -10,7 +11,7 @@ export default function Projects() {
   const translated = (t("projects.items") as Array<{ title: string; description: string }>) || [];
 
   return (
-    <Section id="projects">
+    <Section id="projects" lurker={<Lurker creature="leak" variant="eyes-left" time="01:47 AM" top="12%" />}>
       <SectionHeader cam={t("projects.level")} room={t("rooms.projects")} title={t("projects.title")} subtitle={t("projects.subtitle")} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

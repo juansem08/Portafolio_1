@@ -1,10 +1,30 @@
 // Criaturas originales del laboratorio: siluetas "glitch" con ojos brillantes.
 // NULL (ojos blancos) y SEGFAULT (ojos rojos).
-export type CreatureId = "null" | "segfault";
+export type CreatureId = "null" | "segfault" | "leak" | "notfound";
 
 const EYES: Record<CreatureId, string> = {
   null: "#e8fff0",
   segfault: "#ff3b3b",
+  leak: "#ffb000",
+  notfound: "#5ee7ff",
+};
+
+const RIM = "rgba(200,220,205,0.22)";
+
+// Siluetas de LEAK (masa que gotea, tres ojos) y 404 (figura pequeña de un solo ojo)
+const EXTRA: Partial<Record<CreatureId, { body: string; eyes: { cx: number; cy: number; rx: number; ry: number }[] }>> = {
+  leak: {
+    body: "M8 150C6 112 20 72 50 70c30-2 44 36 42 80-2 4-6 6-8 2l-2-10-3 22c-1 4-5 4-6 0l-2-18-4 8c-2 3-5 2-5-1l-1-12-5 26c-1 4-5 4-6 0l-3-24-4 10c-1 3-5 3-6 0l-2-12-3 16c-1 4-5 4-6 0Z",
+    eyes: [
+      { cx: 38, cy: 96, rx: 3.4, ry: 3.4 },
+      { cx: 56, cy: 92, rx: 4.2, ry: 4.2 },
+      { cx: 70, cy: 104, rx: 2.6, ry: 2.6 },
+    ],
+  },
+  notfound: {
+    body: "M50 58c11 0 19 9 19 20 0 9-5 15-11 18l6 4c4 3 6 9 7 16l4 40h-6l-4-34-3-2-1 40h-8l-3-28h-0l-3 28h-8l-1-40-3 2-4 34h-6l4-40c1-7 3-13 7-16l6-4c-6-3-11-9-11-18 0-11 8-20 19-20Z",
+    eyes: [{ cx: 50, cy: 76, rx: 5, ry: 5.5 }],
+  },
 };
 
 export default function Creature({
@@ -36,7 +56,9 @@ export default function Creature({
           </feMerge>
         </filter>
       </defs>
-      {id === "null" ? (
+      {EXTRA[id] ? (
+        <path fill="#000" stroke={RIM} strokeWidth="1.2" d={EXTRA[id]!.body} />
+      ) : id === "null" ? (
         // Alto, encorvado, brazos largos
         <path
           fill="#000"
@@ -54,7 +76,9 @@ export default function Creature({
         />
       )}
       <g filter={`url(#${glowId})`} fill={eye}>
-        {id === "null" ? (
+        {EXTRA[id] ? (
+          EXTRA[id]!.eyes.map((e) => <ellipse key={`${e.cx}-${e.cy}`} {...e} />)
+        ) : id === "null" ? (
           <>
             <ellipse cx="43" cy="33" rx="3.6" ry="2.4" />
             <ellipse cx="57" cy="33" rx="3.6" ry="2.4" />

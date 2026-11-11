@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { Section, SectionHeader, Feed, Tag } from "./night/ui";
+import Lurker from "./night/Lurker";
 import { useApp } from "@/context/AppContext";
 
 export default function CompanyVisits() {
@@ -124,7 +125,7 @@ export default function CompanyVisits() {
   ];
 
   return (
-    <Section id="visits">
+    <Section id="visits" lurker={<Lurker creature="null" variant="peek-left" time="05:02 AM" top="45%" />}>
       <SectionHeader cam={t("visits.level")} room={t("rooms.visits")} title={t("visits.title")} subtitle={t("visits.subtitle")} />
 
       <div className="space-y-8">

@@ -52,6 +52,15 @@ export const translations = {
       workspace: "Lenguajes, frameworks y herramientas que uso.",
       contact: "Escríbeme: correo, GitHub y formulario.",
     },
+    lurk: {
+      motion: "Movimiento detectado",
+    },
+    postcredits: {
+      label: "Escena post créditos",
+      time: "6:01 AM",
+      line1: "¿Todavía sigues aquí?",
+      line2: "El turno terminó… pero el laboratorio nunca queda vacío.",
+    },
     decor: {
       poster1: "¡No hagas deploy los viernes!",
       wanted: "SE BUSCA",
@@ -360,6 +369,15 @@ export const translations = {
       testimonials: "What professors and classmates say about me.",
       workspace: "Languages, frameworks and tools I use.",
       contact: "Reach me: email, GitHub and contact form.",
+    },
+    lurk: {
+      motion: "Motion detected",
+    },
+    postcredits: {
+      label: "Post-credits scene",
+      time: "6:01 AM",
+      line1: "Are you still here?",
+      line2: "The shift is over… but the lab is never really empty.",
     },
     decor: {
       poster1: "Never deploy on Fridays!",

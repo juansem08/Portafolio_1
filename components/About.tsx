@@ -2,6 +2,7 @@
 
 import ProfilePhoto from "./night/ProfilePhoto";
 import { Section, SectionHeader } from "./night/ui";
+import Lurker from "./night/Lurker";
 import { useApp } from "@/context/AppContext";
 
 const STACK = ["Java", "TypeScript", "Python", "JavaScript", "SQL", "Next.js", "Spring Boot", "Tailwind CSS"];
@@ -19,7 +20,7 @@ export default function About() {
   ];
 
   return (
-    <Section id="about">
+    <Section id="about" lurker={<Lurker creature="segfault" variant="peek-right" time="01:12 AM" top="18%" />}>
       <SectionHeader cam={t("about.level")} room={t("rooms.about")} title={t("about.title")} subtitle={t("about.subtitle")} />
 
       {/* Recorte de periódico */}
