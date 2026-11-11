@@ -18,6 +18,8 @@ export interface Project {
   image?: string;
   // "cover" llena la tarjeta (capturas); "contain" centra la imagen (íconos de app) sobre imageBg.
   imageFit?: "cover" | "contain";
+  // Encuadre cuando la imagen se recorta (por defecto se alinea a la izquierda).
+  imagePosition?: "left" | "center";
   imageBg?: string;
   // Uno o más repositorios (ej. frontend y backend).
   repos: ProjectLink[];
@@ -35,6 +37,7 @@ export const projects: Project[] = [
     },
     tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Supabase"],
     icon: "wrench",
+    image: "/images/projects/autorepuestos.svg",
     repos: [{ label: "Código", url: "https://github.com/Sebas082/Calibracion_Reparacion" }],
     demo: "https://calibracion-reparacion.vercel.app",
   },
@@ -80,13 +83,14 @@ export const projects: Project[] = [
   },
   {
     title: "Gridmind",
-    category: { es: "Full-Stack", en: "Full-Stack" },
+    category: { es: "Web · IoT · Energía", en: "Web · IoT · Energy" },
     description: {
-      es: "Aplicación web Full-Stack con arquitectura desacoplada: frontend en React + TypeScript (Vite) y backend en Java empaquetado con Docker.",
-      en: "Full-Stack web application with a decoupled architecture: React + TypeScript (Vite) frontend and a Java backend packaged with Docker.",
+      es: "Proyecto en equipo: ecosistema de gestión energética que monitorea en tiempo real el consumo en kWh de dispositivos conectados con ESP32 (vinculados por código QR). Incluye dashboard con gráficas diarias y semanales, alertas por umbral, análisis de facturas con IA, predicción de costos a 30 días y reportes en PDF.",
+      en: "Team project: energy management ecosystem that monitors, in real time, the kWh consumption of devices connected through ESP32 boards (paired via QR code). Includes a dashboard with daily and weekly charts, threshold alerts, AI bill analysis, 30-day cost prediction and PDF reports.",
     },
-    tags: ["React", "TypeScript", "Vite", "Java", "Docker"],
+    tags: ["React", "TypeScript", "Java 17", "Spring Boot", "PostgreSQL", "ESP32"],
     icon: "grid",
+    image: "/images/projects/gridmind.jpg",
     repos: [
       { label: "Frontend", url: "https://github.com/CV17d/gridmind-frontend" },
       { label: "Backend", url: "https://github.com/CV17d/gridmind-backend" },
@@ -101,6 +105,8 @@ export const projects: Project[] = [
     },
     tags: ["Unity", "C#", "HLSL", "Generación procedural"],
     icon: "gamepad",
+    image: "/images/projects/demencia.jpg",
+    imagePosition: "center",
     repos: [{ label: "Código", url: "https://github.com/CV17d/demencia_ae_limite" }],
   },
 ];

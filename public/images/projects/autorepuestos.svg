@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-label="AutoRepuestos — Calibración y Reparación">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1222"/>
+      <stop offset="1" stop-color="#111C33"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.35" r="0.55">
+      <stop offset="0" stop-color="#F97316" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FB923C"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <rect width="1440" height="900" fill="url(#grid)"/>
+  <rect width="1440" height="900" fill="url(#glow)"/>
+
+  <!-- Engranaje decorativo -->
+  <g transform="translate(1250 760)" fill="none" stroke="#F97316" stroke-opacity="0.18" stroke-width="22">
+    <circle r="150"/>
+    <circle r="62"/>
+    <g stroke-linecap="round">
+      <path d="M0 -205V-170M0 170V205M-205 0H-170M170 0H205M-145 -145L-120 -120M120 120L145 145M-145 145L-120 120M120 -120L145 -145"/>
+    </g>
+  </g>
+
+  <!-- Texto -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="96" y="150" width="330" height="48" rx="24" fill="#F97316" fill-opacity="0.14" stroke="#F97316" stroke-opacity="0.5"/>
+    <circle cx="124" cy="174" r="7" fill="#F97316"/>
+    <text x="144" y="182" font-size="22" font-weight="700" fill="#FDBA74" letter-spacing="2">TALLER AUTOMOTRIZ</text>
+
+    <text x="92" y="318" font-size="104" font-weight="900" fill="#FFFFFF" letter-spacing="-3">Auto</text>
+    <text x="92" y="420" font-size="104" font-weight="900" fill="url(#orange)" letter-spacing="-3">Repuestos</text>
+    <text x="96" y="486" font-size="34" font-weight="600" fill="#CBD5E1">Calibración y Reparación</text>
+    <text x="96" y="540" font-size="26" fill="#94A3B8">Catálogo de repuestos y agendamiento de citas</text>
+
+    <g font-size="22" font-weight="700">
+      <rect x="96" y="600" width="170" height="52" rx="12" fill="#1E293B" stroke="#334155"/>
+      <text x="181" y="634" text-anchor="middle" fill="#E2E8F0">Catálogo</text>
+      <rect x="282" y="600" width="150" height="52" rx="12" fill="#1E293B" stroke="#334155"/>
+      <text x="357" y="634" text-anchor="middle" fill="#E2E8F0">Citas</text>
+      <rect x="448" y="600" width="190" height="52" rx="12" fill="#14532D" stroke="#22C55E" stroke-opacity="0.6"/>
+      <text x="543" y="634" text-anchor="middle" fill="#86EFAC">WhatsApp</text>
+    </g>
+  </g>
+
+  <!-- Maqueta del sitio -->
+  <g transform="translate(760 150)">
+    <rect width="600" height="560" rx="22" fill="#0F172A" stroke="#334155" stroke-width="3"/>
+    <rect width="600" height="56" rx="22" fill="#1E293B"/>
+    <rect y="34" width="600" height="22" fill="#1E293B"/>
+    <circle cx="34" cy="28" r="8" fill="#F87171"/>
+    <circle cx="60" cy="28" r="8" fill="#FBBF24"/>
+    <circle cx="86" cy="28" r="8" fill="#34D399"/>
+    <rect x="130" y="16" width="340" height="24" rx="12" fill="#0F172A"/>
+
+    <!-- Encabezado del sitio -->
+    <rect x="32" y="84" width="200" height="26" rx="6" fill="#F97316"/>
+    <rect x="32" y="126" width="380" height="16" rx="8" fill="#334155"/>
+    <rect x="32" y="152" width="300" height="16" rx="8" fill="#334155"/>
+
+    <!-- Tarjetas de producto -->
+    <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="700">
+      <g transform="translate(32 196)">
+        <rect width="168" height="220" rx="14" fill="#1E293B" stroke="#334155"/>
+        <rect x="14" y="14" width="140" height="96" rx="10" fill="#273449"/>
+        <circle cx="84" cy="62" r="30" fill="none" stroke="#F97316" stroke-width="8"/>
+        <rect x="14" y="126" width="110" height="12" rx="6" fill="#64748B"/>
+        <rect x="14" y="146" width="80" height="12" rx="6" fill="#475569"/>
+        <text x="14" y="198" fill="#FDBA74">$ 119.900</text>
+      </g>
+      <g transform="translate(216 196)">
+        <rect width="168" height="220" rx="14" fill="#1E293B" stroke="#334155"/>
+        <rect x="14" y="14" width="140" height="96" rx="10" fill="#273449"/>
+        <rect x="56" y="34" width="56" height="58" rx="8" fill="none" stroke="#F97316" stroke-width="8"/>
+        <rect x="14" y="126" width="120" height="12" rx="6" fill="#64748B"/>
+        <rect x="14" y="146" width="70" height="12" rx="6" fill="#475569"/>
+        <text x="14" y="198" fill="#FDBA74">$ 32.900</text>
+      </g>
+      <g transform="translate(400 196)">
+        <rect width="168" height="220" rx="14" fill="#1E293B" stroke="#334155"/>
+        <rect x="14" y="14" width="140" height="96" rx="10" fill="#273449"/>
+        <path d="M60 40h48v44H60z M72 30h8v10h-8z M88 30h8v10h-8z" fill="none" stroke="#F97316" stroke-width="7"/>
+        <rect x="14" y="126" width="100" height="12" rx="6" fill="#64748B"/>
+        <rect x="14" y="146" width="90" height="12" rx="6" fill="#475569"/>
+        <text x="14" y="198" fill="#FDBA74">$ 389.000</text>
+      </g>
+
+      <!-- Botón de agendar -->
+      <rect x="32" y="444" width="536" height="72" rx="14" fill="url(#orange)"/>
+      <text x="300" y="489" text-anchor="middle" font-size="24" fill="#FFFFFF">Agendar cita</text>
+    </g>
+  </g>
+
+  <!-- Llave inglesa -->
+  <g transform="translate(700 690) rotate(-35)">
+    <rect x="-18" y="-10" width="200" height="36" rx="18" fill="url(#orange)"/>
+    <path d="M-60 8a52 52 0 1 0 52 -52l-6 34l-28 6l-18 -18z" fill="url(#orange)" transform="translate(-20 0)"/>
+  </g>
+</svg>

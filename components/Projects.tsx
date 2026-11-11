@@ -85,10 +85,11 @@ export default function Projects() {
                         alt={`${t("projects.screenshotOf")} ${project.title}`}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        unoptimized={project.image.endsWith(".svg")}
                         className={`${
                           project.imageFit === "contain"
                             ? "object-contain p-8 drop-shadow-[0_10px_18px_rgba(0,0,0,0.25)]"
-                            : "object-cover object-left"
+                            : `object-cover ${project.imagePosition === "center" ? "object-center" : "object-left"}`
                         } group-hover:scale-105 transition-transform duration-500`}
                       />
                     ) : (
