@@ -29,6 +29,28 @@ const FLOOR = (() => {
   return cells;
 })();
 
+// Colores de la fiesta, un poco apagados por la cámara
+const PARTY_C = ["#d9475a", "#d8ab3a", "#3f8fd6", "#8657c4", "#2fbf8c", "#d9783a"];
+
+function SvgBalloon({ x, y, color, len = 30 }: { x: number; y: number; color: string; len?: number }) {
+  return (
+    <g>
+      <path d={`M${x} ${y + 11} q3 ${len / 2} -1 ${len}`} stroke="#0b0f0d" strokeWidth="0.8" fill="none" />
+      <ellipse cx={x} cy={y} rx="8" ry="10" fill={color} opacity="0.85" />
+      <ellipse cx={x - 3} cy={y - 4} rx="2" ry="3" fill="#fff" opacity="0.3" />
+    </g>
+  );
+}
+
+function SvgHat({ x, y, color }: { x: number; y: number; color: string }) {
+  return (
+    <g>
+      <polygon points={`${x},${y - 14} ${x + 6},${y} ${x - 6},${y}`} fill={color} opacity="0.9" />
+      <circle cx={x} cy={y - 14} r="2" fill="#d8ab3a" />
+    </g>
+  );
+}
+
 const C = {
   ink: "#0e1310",
   body: "#3d4a41",
@@ -77,6 +99,15 @@ export default function RoomScene({ id, sign = "" }: { id: RoomId; sign?: string
       {/* Lámpara del techo */}
       <rect x="135" y="0" width="50" height="4" fill="#cfe8c4" opacity="0.85" className="animate-bulb" />
 
+      {/* Banderines de la fiesta en todas las salas */}
+      <path d="M0 8 Q160 34 320 8" fill="none" stroke={C.ink} strokeWidth="1" />
+      {Array.from({ length: 13 }).map((_, k) => {
+        const tt = (k + 1) / 14;
+        const x = tt * 320;
+        const y = 8 + 4 * 13 * tt * (1 - tt);
+        return <polygon key={k} points={`${x - 5},${y} ${x + 5},${y} ${x},${y + 10}`} fill={PARTY_C[k % PARTY_C.length]} opacity="0.7" />;
+      })}
+
       {id === "about" && <About />}
       {id === "projects" && <Lab />}
       {id === "experience" && <Records />}
@@ -123,6 +154,8 @@ function About() {
       {/* Papeles y foto */}
       <rect x="160" y="91" width="18" height="6" fill={C.paper} transform="rotate(-6 169 94)" />
       <rect x="182" y="88" width="10" height="9" fill="#22302a" />
+      {/* Globo desinflado en el piso */}
+      <path d="M232 156c3-9 14-14 24-12 7 1 11 6 9 10-2 5-9 6-16 5-6-1-12 0-17-3Z" fill={PARTY_C[0]} opacity="0.75" />
     </g>
   );
 }
@@ -160,6 +193,9 @@ function Lab() {
       {/* Sillas */}
       <rect x="70" y="112" width="26" height="22" rx="3" fill="#1a221d" />
       <rect x="224" y="112" width="26" height="22" rx="3" fill="#1a221d" />
+      {/* Globos amarrados a las sillas */}
+      <SvgBalloon x={80} y={72} color={PARTY_C[0]} len={38} />
+      <SvgBalloon x={238} y={68} color={PARTY_C[1]} len={42} />
     </g>
   );
 }
@@ -194,6 +230,10 @@ function Records() {
       {/* Caja en el piso */}
       <rect x="142" y="132" width="36" height="22" fill="#5e664f" />
       <line x1="142" x2="178" y1="138" y2="138" />
+      {/* Confeti en el piso */}
+      {Array.from({ length: 22 }).map((_, i) => (
+        <rect key={i} x={20 + ((i * 53) % 280)} y={140 + ((i * 17) % 36)} width="3" height="2" fill={PARTY_C[i % PARTY_C.length]} stroke="none" transform={`rotate(${(i * 37) % 90} ${20 + ((i * 53) % 280)} ${140 + ((i * 17) % 36)})`} />
+      ))}
     </g>
   );
 }
@@ -219,6 +259,7 @@ function Mailbox() {
       {/* Sobres en el piso */}
       <rect x="236" y="146" width="22" height="14" fill={C.paper} transform="rotate(-12 247 153)" />
       <rect x="258" y="152" width="20" height="13" fill={C.paper} opacity="0.8" transform="rotate(8 268 158)" />
+      <SvgBalloon x={250} y={56} color={PARTY_C[1]} len={60} />
     </g>
   );
 }
@@ -250,6 +291,9 @@ function Servers() {
           ))}
         </g>
       ))}
+      {/* Gorros de fiesta sobre los racks */}
+      <SvgHat x={52} y={14} color={PARTY_C[3]} />
+      <SvgHat x={196} y={14} color={PARTY_C[4]} />
     </g>
   );
 }
@@ -278,6 +322,9 @@ function FrontDesk({ sign }: { sign: string }) {
       {/* Planta */}
       <rect x="272" y="112" width="20" height="22" fill="#4a4636" />
       <path d="M282 112 C270 96 274 84 282 92 C286 80 296 88 290 100 C300 96 298 108 282 112Z" fill="#2f4a36" />
+      {/* Globos amarrados al timbre */}
+      <SvgBalloon x={150} y={50} color={PARTY_C[2]} len={30} />
+      <SvgBalloon x={166} y={46} color={PARTY_C[5]} len={34} />
     </g>
   );
 }

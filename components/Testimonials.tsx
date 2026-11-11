@@ -2,6 +2,7 @@
 
 import { Section, SectionHeader, Feed } from "./night/ui";
 import Lurker from "./night/Lurker";
+import { SectionParty, PARTY } from "./night/Party";
 import { useApp } from "@/context/AppContext";
 
 interface Testimonial {
@@ -18,7 +19,11 @@ export default function Testimonials() {
   const { t } = useApp();
 
   return (
-    <Section id="testimonials" lurker={<Lurker creature="notfound" variant="peek-left" time="03:04 AM" top="20%" />}>
+    <Section
+      id="testimonials"
+      accent={PARTY.pink}
+      decor={<SectionParty top="garland" balloons="right" colors={[PARTY.pink, PARTY.yellow, PARTY.blue]} />}
+      lurker={<Lurker creature="notfound" variant="peek-left" time="03:04 AM" top="20%" />}>
       <SectionHeader cam={t("testimonials.level")} room={t("rooms.testimonials")} title={t("testimonials.title")} subtitle={t("testimonials.subtitle")} />
 
       {testimonials.length > 0 ? (

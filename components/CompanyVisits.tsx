@@ -2,9 +2,13 @@
 
 import Image from "next/image";
 import { MapPin } from "lucide-react";
-import { Section, SectionHeader, Feed, Tag } from "./night/ui";
+import { Section, SectionHeader } from "./night/ui";
 import Lurker from "./night/Lurker";
+import { SectionParty, PARTY } from "./night/Party";
 import { useApp } from "@/context/AppContext";
+
+// Chinches de colores para las polaroids
+const PIN_COLORS = [PARTY.red, PARTY.yellow, PARTY.blue, PARTY.green, PARTY.purple];
 
 export default function CompanyVisits() {
   const { t, lang } = useApp();
@@ -125,58 +129,74 @@ export default function CompanyVisits() {
   ];
 
   return (
-    <Section id="visits" lurker={<Lurker creature="null" variant="peek-left" time="05:02 AM" top="45%" />}>
+    <Section
+      id="visits"
+      accent={PARTY.red}
+      decor={<SectionParty top="lights" balloons="right" deflated="right" colors={[PARTY.red, PARTY.blue, PARTY.yellow]} />}
+      lurker={<Lurker creature="null" variant="peek-left" time="05:02 AM" top="45%" />}>
       <SectionHeader cam={t("visits.level")} room={t("rooms.visits")} title={t("visits.title")} subtitle={t("visits.subtitle")} />
 
-      <div className="space-y-8">
-        {visits.map((visit, index) => {
-          const multiple = visit.images.length > 1;
-          const camId = `CAM 07-${String.fromCharCode(65 + index)}`;
+      {/* Tablero de evidencias */}
+      <div className="cork relative px-4 py-10 sm:px-10 sm:py-12">
+        {/* Hilo rojo que une los casos */}
+        <svg aria-hidden className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polyline points="27,7 73,24 27,44 73,62 27,82" fill="none" stroke="#c62828" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+        </svg>
 
-          return (
-            <Feed key={visit.id} label={`${camId} · ${visit.badge}`}>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <div className="lg:col-span-6 space-y-4">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <h3 className="font-retro text-4xl uppercase leading-none text-ink">{visit.name}</h3>
-                    <span className="inline-flex items-center gap-1.5 font-retro text-lg uppercase text-muted">
-                      <MapPin className="w-4 h-4 text-rec" />
-                      {visit.location}
-                    </span>
-                  </div>
-                  <p className="font-retro text-xl uppercase text-rec">
-                    {t("visits.areaPrefix")}: {visit.role}
-                  </p>
-                  <p className="text-muted leading-relaxed">{visit.description}</p>
-                  <div>
-                    <p className="font-retro text-lg text-muted uppercase tracking-wider mb-2">{t("visits.takeawaysHeader")}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {visit.takeaways.map((item) => (
-                        <Tag key={item}>{item}</Tag>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+        <div className="relative mx-auto mb-10 w-fit -rotate-1">
+          <span aria-hidden className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#ff4b5c] shadow-[0_2px_4px_rgba(0,0,0,.6)] z-10" />
+          <p className="paper px-6 py-2 font-news font-bold text-xl sm:text-2xl uppercase tracking-widest">{t("visits.boardTitle")}</p>
+        </div>
 
-                <div className={`lg:col-span-6 ${multiple ? "grid grid-cols-1 sm:grid-cols-2 gap-4" : ""}`}>
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-14">
+          {visits.map((visit, index) => {
+            const pin = PIN_COLORS[index % PIN_COLORS.length];
+            return (
+              <article key={visit.id} className={`relative ${index % 2 ? "lg:mt-20 rotate-1" : "-rotate-1"}`}>
+                {/* Polaroids */}
+                <div className={`flex gap-3 ${visit.images.length > 1 ? "" : "justify-center"}`}>
                   {visit.images.map((img, imgIdx) => (
-                    <figure key={img.src} className="border border-edge">
-                      <div className="screen scanlines relative aspect-[4/3]">
-                        <div aria-hidden className="cam-corners" />
-                        <Image src={img.src} alt={img.caption} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover saturate-[0.6] contrast-110" />
-                        <span className="absolute top-2 left-3 z-[4] flex items-center gap-1.5 font-retro text-lg text-white uppercase drop-shadow">
-                          <span aria-hidden className="block w-2 h-2 rounded-full bg-rec animate-rec" />
-                          {camId} · {t("visits.photoLabel")} {imgIdx + 1}
-                        </span>
+                    <figure
+                      key={img.src}
+                      className={`relative bg-[#f4f1e8] p-2 pb-9 shadow-[0_10px_22px_rgba(0,0,0,.55)] ${visit.images.length > 1 ? "w-1/2" : "w-full max-w-sm"} ${imgIdx % 2 ? "rotate-2" : "-rotate-2"}`}
+                    >
+                      <span aria-hidden className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full shadow-[0_2px_4px_rgba(0,0,0,.6)] z-10" style={{ background: pin }} />
+                      <div className="relative aspect-[4/3] bg-[#222] overflow-hidden">
+                        <Image src={img.src} alt={img.caption} fill sizes="(max-width: 768px) 90vw, 40vw" className="object-cover sepia-[0.25] contrast-110" />
                       </div>
-                      <figcaption className="px-3 py-2 text-sm text-muted">{img.caption}</figcaption>
+                      <figcaption className="absolute bottom-1.5 inset-x-2 font-typewriter text-[11px] leading-tight text-[#2a2620] line-clamp-2">
+                        {img.caption}
+                      </figcaption>
                     </figure>
                   ))}
                 </div>
-              </div>
-            </Feed>
-          );
-        })}
+
+                {/* Ficha del caso */}
+                <div className="paper relative -mt-3 ml-4 sm:ml-8 p-4 sm:p-5 rotate-1">
+                  <span aria-hidden className="tape -top-3 right-6 rotate-3 !w-16 !h-5" />
+                  <p className="font-typewriter text-xs uppercase tracking-wider text-[#5a5446]">
+                    {t("visits.caseLabel")} N.º {String(index + 1).padStart(2, "0")} · {visit.badge}
+                  </p>
+                  <h3 className="mt-1 font-news font-bold text-2xl uppercase leading-tight">{visit.name}</h3>
+                  <p className="mt-1 flex items-center gap-1.5 font-typewriter text-xs uppercase text-[#5a5446]">
+                    <MapPin className="w-3.5 h-3.5 text-[#b3261e]" />
+                    {visit.location}
+                  </p>
+                  <p className="mt-2 font-typewriter text-sm text-[#b3261e]">
+                    {t("visits.areaPrefix")}: {visit.role}
+                  </p>
+                  <p className="mt-2 font-typewriter text-[13px] leading-relaxed text-[#2a2620]">{visit.description}</p>
+                  <p className="mt-3 font-typewriter text-xs uppercase text-[#5a5446]">{t("visits.takeawaysHeader")}:</p>
+                  <ul className="mt-1 grid grid-cols-1 sm:grid-cols-2 gap-x-4 font-typewriter text-[13px] text-[#2a2620]">
+                    {visit.takeaways.map((item) => (
+                      <li key={item}>✓ {item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
     </Section>
   );

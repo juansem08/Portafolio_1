@@ -3,6 +3,7 @@
 import { Terminal, Bot, Code2, Box, Layers, Cloud } from "lucide-react";
 import { Section, SectionHeader } from "./night/ui";
 import Lurker from "./night/Lurker";
+import { SectionParty, PARTY } from "./night/Party";
 import { useApp } from "@/context/AppContext";
 
 type Lang = { name: string; category: string; description: string; level: string };
@@ -17,7 +18,11 @@ export default function ExtraSection() {
   const tools = (t("extra.toolsItems") as Tool[]) || [];
 
   return (
-    <Section id="workspace" lurker={<Lurker creature="leak" variant="walk" time="03:41 AM" />}>
+    <Section
+      id="workspace"
+      accent={PARTY.blue}
+      decor={<SectionParty top="lights" balloons="right" colors={[PARTY.blue, PARTY.green, PARTY.purple]} />}
+      lurker={<Lurker creature="leak" variant="walk" time="03:41 AM" />}>
       <SectionHeader cam={t("extra.level")} room={t("rooms.workspace")} title={t("extra.title")} subtitle={t("extra.subtitle")} />
 
       <h3 className="font-retro text-3xl uppercase text-ink mb-5">{t("extra.sub1Title")}</h3>

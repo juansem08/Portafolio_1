@@ -3,6 +3,7 @@
 import { Github, ExternalLink, Briefcase, GraduationCap } from "lucide-react";
 import { Section, SectionHeader } from "./night/ui";
 import Lurker from "./night/Lurker";
+import { SectionParty, PARTY } from "./night/Party";
 import { useApp } from "@/context/AppContext";
 
 interface TimelineItem {
@@ -32,7 +33,11 @@ export default function Experience() {
   let fileNo = 0;
 
   return (
-    <Section id="experience" lurker={<Lurker creature="null" variant="hang" time="02:30 AM" />}>
+    <Section
+      id="experience"
+      accent={PARTY.green}
+      decor={<SectionParty top="lights" deflated="left" colors={[PARTY.orange]} />}
+      lurker={<Lurker creature="null" variant="hang" time="02:30 AM" />}>
       <SectionHeader cam={t("experience.level")} room={t("rooms.experience")} title={t("experience.title")} subtitle={t("experience.subtitle")} />
 
       <div className="space-y-14">

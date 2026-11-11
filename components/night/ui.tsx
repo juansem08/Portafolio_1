@@ -1,9 +1,34 @@
 import type { ReactNode } from "react";
 
-export function Section({ id, children, lurker }: { id: string; children: ReactNode; lurker?: ReactNode }) {
+export function Section({
+  id,
+  children,
+  lurker,
+  decor,
+  accent,
+}: {
+  id: string;
+  children: ReactNode;
+  lurker?: ReactNode;
+  decor?: ReactNode;
+  accent?: string;
+}) {
   return (
-    <section id={id} className="relative py-16 sm:py-24">
-      {/* Personaje que aparece detrás del contenido */}
+    <section
+      id={id}
+      className="relative py-20 sm:py-28"
+      style={accent ? ({ "--accent": accent } as React.CSSProperties) : undefined}
+    >
+      {/* Luz del color de la sala */}
+      {accent && (
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-[520px] pointer-events-none z-0"
+          style={{ background: `radial-gradient(ellipse 60% 70% at 50% 0%, ${accent}22, transparent 70%)` }}
+        />
+      )}
+      {/* Decoración de fiesta y personaje que aparece, detrás del contenido */}
+      {decor}
       {lurker}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
@@ -32,12 +57,13 @@ export function SectionHeader({
         <RecDot />
         <span className="text-rec">REC</span>
         <span>
-          {cam} · {room}
+          {cam} · <span style={{ color: "var(--accent, inherit)" }}>{room}</span>
         </span>
       </p>
-      <h2 className="mt-2 font-retro text-5xl sm:text-7xl uppercase leading-none tracking-wide text-ink vhs-text animate-flicker">
+      <h2 className="mt-2 font-retro text-5xl sm:text-7xl uppercase leading-none tracking-wide text-ink vhs-neon animate-flicker">
         {title}
       </h2>
+      <span aria-hidden className="mt-3 block h-1 w-24" style={{ background: "var(--accent, #ff3b3b)", boxShadow: "0 0 12px var(--accent, #ff3b3b)" }} />
       {subtitle && <p className="mt-4 max-w-2xl text-muted leading-relaxed">{subtitle}</p>}
     </header>
   );
@@ -60,7 +86,10 @@ export function Feed({
   return (
     <div className={`cam-frame ${className}`}>
       {label && (
-        <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-edge bg-panel2 font-retro text-lg uppercase tracking-wider">
+        <div
+          className="flex items-center justify-between gap-3 px-4 py-2 border-b border-edge bg-panel2 font-retro text-lg uppercase tracking-wider"
+          style={{ boxShadow: "inset 4px 0 0 var(--accent, transparent)" }}
+        >
           <span className="text-ink">{label}</span>
           <span className="flex items-center gap-2 text-muted">{right ?? <RecDot />}</span>
         </div>

@@ -3,6 +3,7 @@
 import { Download, MapPin } from "lucide-react";
 import NightShiftGame from "./night/NightShiftGame";
 import OfficeWall from "./night/OfficeWall";
+import { Confetti, PartyHat, PARTY } from "./night/Party";
 import ProfilePhoto from "./night/ProfilePhoto";
 import { CamButton } from "./night/ui";
 import { useApp } from "@/context/AppContext";
@@ -62,8 +63,14 @@ export default function Hero() {
 
           {/* Monitor sobre el escritorio */}
           <div className="lg:col-span-7">
-            <NightShiftGame />
-            <div aria-hidden className="h-4 bg-gradient-to-b from-[#3a3326] to-[#1f1b14] shadow-[0_14px_24px_rgba(0,0,0,.6)]" />
+            <div className="relative">
+              {/* Gorro de fiesta olvidado encima del monitor */}
+              <PartyHat color={PARTY.purple} className="absolute -top-9 left-10 w-9 h-11 -rotate-12 z-[1]" />
+              <NightShiftGame />
+            </div>
+            <div aria-hidden className="relative h-4 bg-gradient-to-b from-[#3a3326] to-[#1f1b14] shadow-[0_14px_24px_rgba(0,0,0,.6)]">
+              <Confetti count={30} className="absolute inset-0" />
+            </div>
             <div aria-hidden className="hidden sm:flex justify-between px-6">
               <span className="block w-3 h-10 bg-[#1f1b14]" />
               <span className="block w-3 h-10 bg-[#1f1b14]" />
