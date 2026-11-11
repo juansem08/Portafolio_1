@@ -75,14 +75,21 @@ export default function Projects() {
                 <div className="rounded-lg border-2 border-[#1B1717] dark:border-[#810100] bg-[#FAF9F5] dark:bg-[#1E1B18] shadow-[8px_8px_0px_#1B1717] dark:shadow-[8px_8px_0px_#810100] flex flex-col h-full overflow-hidden">
 
                   {/* Imagen del proyecto o portada con ícono */}
-                  <div className="relative aspect-[16/10] border-b-2 border-[#1B1717] dark:border-[#810100] overflow-hidden bg-[#EDEBDD] dark:bg-[#121010]">
+                  <div
+                    className="relative aspect-[16/10] border-b-2 border-[#1B1717] dark:border-[#810100] overflow-hidden bg-[#EDEBDD] dark:bg-[#121010]"
+                    style={project.imageBg ? { background: project.imageBg } : undefined}
+                  >
                     {project.image ? (
                       <Image
                         src={project.image}
                         alt={`${t("projects.screenshotOf")} ${project.title}`}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        className={`${
+                          project.imageFit === "contain"
+                            ? "object-contain p-8 drop-shadow-[0_10px_18px_rgba(0,0,0,0.25)]"
+                            : "object-cover object-left"
+                        } group-hover:scale-105 transition-transform duration-500`}
                       />
                     ) : (
                       <div

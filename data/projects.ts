@@ -14,8 +14,11 @@ export interface Project {
   description: Text;
   tags: string[];
   icon: ProjectIcon;
-  // Captura del proyecto en public/images/projects. Si no hay, la tarjeta muestra una portada con ícono.
+  // Imagen del proyecto en public/images/projects. Si no hay, la tarjeta muestra una portada con ícono.
   image?: string;
+  // "cover" llena la tarjeta (capturas); "contain" centra la imagen (íconos de app) sobre imageBg.
+  imageFit?: "cover" | "contain";
+  imageBg?: string;
   // Uno o más repositorios (ej. frontend y backend).
   repos: ProjectLink[];
   // Demo en vivo. Si queda vacío, la tarjeta muestra "Demo próximamente".
@@ -44,6 +47,9 @@ export const projects: Project[] = [
     },
     tags: ["React Native", "Expo", "TypeScript", "Node.js", "Gemini", "Firebase"],
     icon: "scan",
+    image: "/images/projects/clarify.png",
+    imageFit: "contain",
+    imageBg: "linear-gradient(135deg,#FDE3D3,#F7B79A)",
     repos: [{ label: "Código", url: "https://github.com/juansem08/Escaner_Sintetizador_Multimodal_Documentos_conia" }],
   },
   {
@@ -55,6 +61,9 @@ export const projects: Project[] = [
     },
     tags: ["Electron", "React", "TypeScript", "Gemini"],
     icon: "chart",
+    image: "/images/projects/clasificador.png",
+    imageFit: "contain",
+    imageBg: "linear-gradient(135deg,#FBF1E4,#EBC79B)",
     repos: [{ label: "Código", url: "https://github.com/juansem08/Clasificador_Automtico__Rese-asas_Comentarios" }],
   },
   {
@@ -66,6 +75,7 @@ export const projects: Project[] = [
     },
     tags: ["Monkey C", "Connect IQ", "Next.js", "TypeScript", "Gemini"],
     icon: "watch",
+    image: "/images/projects/noticias-garmin.png",
     repos: [{ label: "Código", url: "https://github.com/juansem08/Visor_Rese-as_Noticias_Dia" }],
   },
   {

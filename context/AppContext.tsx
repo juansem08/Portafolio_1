@@ -255,15 +255,16 @@ export const translations = {
       title: "ADICIONAL",
       subtitle: "Certificados y visitas empresariales que complementan mi formación.",
       certificates: "Certificados",
-      certificatesDesc: "Cursos complementarios",
+      certificatesDesc: "Título técnico y cursos del SENA",
       visits: "Visitas empresariales",
       visitsDesc: "Ruta tecnológica en Medellín",
     },
     certificates: {
       sectionTape: "// 06.1 CERTIFICADOS",
       title: "CERTIFICADOS",
-      subtitle: "Cursos complementarios del SENA, además de mi formación principal.",
-      verify: "Verificar",
+      subtitle: "Mi título técnico y los cursos complementarios del SENA. Haz clic para ver cada certificado.",
+      view: "Ver certificado",
+      previewOf: "Vista previa del certificado",
     },
     // Contact
     contact: {
@@ -552,15 +553,16 @@ export const translations = {
       title: "ADDITIONAL",
       subtitle: "Certificates and company visits that complement my education.",
       certificates: "Certificates",
-      certificatesDesc: "Complementary courses",
+      certificatesDesc: "Technical degree and SENA courses",
       visits: "Company visits",
       visitsDesc: "Tech tour in Medellín",
     },
     certificates: {
       sectionTape: "// 06.1 CERTIFICATES",
       title: "CERTIFICATES",
-      subtitle: "Complementary SENA courses beyond my main education.",
-      verify: "Verify",
+      subtitle: "My technical degree and complementary SENA courses. Click to view each certificate.",
+      view: "View certificate",
+      previewOf: "Certificate preview",
     },
     // Contact
     contact: {
