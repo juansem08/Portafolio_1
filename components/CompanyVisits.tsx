@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { MapPin } from "lucide-react";
-import { Section, SectionHeader, Panel, Tag, ACCENT_CYCLE } from "./arcade/ui";
+import { Section, SectionHeader, Feed, Tag } from "./night/ui";
 import { useApp } from "@/context/AppContext";
 
 export default function CompanyVisits() {
@@ -125,33 +125,33 @@ export default function CompanyVisits() {
 
   return (
     <Section id="visits">
-      <SectionHeader level={t("visits.level")} title={t("visits.title")} subtitle={t("visits.subtitle")} accent="sky" />
+      <SectionHeader cam={t("visits.level")} room={t("rooms.visits")} title={t("visits.title")} subtitle={t("visits.subtitle")} />
 
-      <div className="space-y-10">
+      <div className="space-y-8">
         {visits.map((visit, index) => {
-          const accent = ACCENT_CYCLE[index % ACCENT_CYCLE.length];
           const multiple = visit.images.length > 1;
+          const camId = `CAM 07-${String.fromCharCode(65 + index)}`;
 
           return (
-            <Panel key={visit.id} title={visit.badge} accent={accent}>
+            <Feed key={visit.id} label={`${camId} · ${visit.badge}`}>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-6 space-y-4">
                   <div className="flex flex-wrap items-center justify-between gap-3">
-                    <h3 className="font-pixel text-sm sm:text-lg text-ink">{visit.name}</h3>
-                    <span className="inline-flex items-center gap-1.5 font-retro text-lg px-2 border-2 border-edge bg-panel2 text-ink">
-                      <MapPin className="w-4 h-4 text-pink" />
+                    <h3 className="font-retro text-4xl uppercase leading-none text-ink">{visit.name}</h3>
+                    <span className="inline-flex items-center gap-1.5 font-retro text-lg uppercase text-muted">
+                      <MapPin className="w-4 h-4 text-rec" />
                       {visit.location}
                     </span>
                   </div>
-                  <p className="font-retro text-xl text-pink">
+                  <p className="font-retro text-xl uppercase text-rec">
                     {t("visits.areaPrefix")}: {visit.role}
                   </p>
                   <p className="text-muted leading-relaxed">{visit.description}</p>
                   <div>
-                    <p className="font-pixel text-[9px] text-muted mb-2">{t("visits.takeawaysHeader")}</p>
+                    <p className="font-retro text-lg text-muted uppercase tracking-wider mb-2">{t("visits.takeawaysHeader")}</p>
                     <div className="flex flex-wrap gap-2">
                       {visit.takeaways.map((item) => (
-                        <Tag key={item}>★ {item}</Tag>
+                        <Tag key={item}>{item}</Tag>
                       ))}
                     </div>
                   </div>
@@ -159,19 +159,21 @@ export default function CompanyVisits() {
 
                 <div className={`lg:col-span-6 ${multiple ? "grid grid-cols-1 sm:grid-cols-2 gap-4" : ""}`}>
                   {visit.images.map((img, imgIdx) => (
-                    <figure key={img.src} className="border-4 border-edge bg-panel2">
-                      <div className="relative aspect-[4/3] bg-screen overflow-hidden border-b-4 border-edge">
-                        <Image src={img.src} alt={img.caption} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
-                        <span className="absolute bottom-2 right-2 font-pixel text-[8px] px-2 py-1 bg-[#050314] text-white">
-                          {t("visits.photoLabel")} {imgIdx + 1}
+                    <figure key={img.src} className="border border-edge">
+                      <div className="screen scanlines relative aspect-[4/3]">
+                        <div aria-hidden className="cam-corners" />
+                        <Image src={img.src} alt={img.caption} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover saturate-[0.6] contrast-110" />
+                        <span className="absolute top-2 left-3 z-[4] flex items-center gap-1.5 font-retro text-lg text-white uppercase drop-shadow">
+                          <span aria-hidden className="block w-2 h-2 rounded-full bg-rec animate-rec" />
+                          {camId} · {t("visits.photoLabel")} {imgIdx + 1}
                         </span>
                       </div>
-                      <figcaption className="px-3 py-2 font-retro text-lg leading-tight text-ink">{img.caption}</figcaption>
+                      <figcaption className="px-3 py-2 text-sm text-muted">{img.caption}</figcaption>
                     </figure>
                   ))}
                 </div>
               </div>
-            </Panel>
+            </Feed>
           );
         })}
       </div>

@@ -1,20 +1,5 @@
 import type { ReactNode } from "react";
 
-export type Accent = "pink" | "yellow" | "mint" | "sky" | "violet" | "orange" | "dark";
-
-// Fondo + color de texto legible para cada acento
-export const accentBg: Record<Accent, string> = {
-  pink: "bg-pink text-white",
-  yellow: "bg-yellow text-[#241b4b]",
-  mint: "bg-mint text-[#241b4b]",
-  sky: "bg-sky text-[#241b4b]",
-  violet: "bg-violet text-white",
-  orange: "bg-orange text-[#241b4b]",
-  dark: "bg-[#241b4b] text-white",
-};
-
-export const ACCENT_CYCLE: Accent[] = ["pink", "sky", "mint", "yellow", "violet", "orange"];
-
 export function Section({ id, children }: { id: string; children: ReactNode }) {
   return (
     <section id={id} className="py-16 sm:py-24">
@@ -23,51 +8,59 @@ export function Section({ id, children }: { id: string; children: ReactNode }) {
   );
 }
 
+export function RecDot({ className = "" }: { className?: string }) {
+  return <span aria-hidden className={`inline-block w-2.5 h-2.5 rounded-full bg-rec animate-rec ${className}`} />;
+}
+
+/** Encabezado de sección como rótulo de cámara: "● REC  CAM 02 · LABORATORIO" */
 export function SectionHeader({
-  level,
+  cam,
+  room,
   title,
   subtitle,
-  accent = "pink",
 }: {
-  level: string;
+  cam: string;
+  room: string;
   title: string;
   subtitle?: string;
-  accent?: Accent;
 }) {
   return (
     <header className="mb-10 sm:mb-12">
-      <span className={`inline-block font-pixel text-[10px] px-3 py-2 border-4 border-edge ${accentBg[accent]}`}>
-        {level}
-      </span>
-      <h2 className="mt-5 font-pixel text-2xl sm:text-4xl leading-snug text-ink">{title}</h2>
+      <p className="flex items-center gap-2 font-retro text-xl text-muted uppercase tracking-wider">
+        <RecDot />
+        <span className="text-rec">REC</span>
+        <span>
+          {cam} · {room}
+        </span>
+      </p>
+      <h2 className="mt-2 font-retro text-5xl sm:text-7xl uppercase leading-none tracking-wide text-ink vhs-text animate-flicker">
+        {title}
+      </h2>
       {subtitle && <p className="mt-4 max-w-2xl text-muted leading-relaxed">{subtitle}</p>}
     </header>
   );
 }
 
-export function Panel({
+/** Panel con barra superior tipo monitor */
+export function Feed({
+  label,
+  right,
   children,
-  title,
-  accent = "violet",
   className = "",
   bodyClassName = "p-5 sm:p-6",
 }: {
+  label?: ReactNode;
+  right?: ReactNode;
   children: ReactNode;
-  title?: ReactNode;
-  accent?: Accent;
   className?: string;
   bodyClassName?: string;
 }) {
   return (
-    <div className={`pixel-panel ${className}`}>
-      {title && (
-        <div className={`flex items-center justify-between gap-3 px-4 py-2.5 border-b-4 border-edge ${accentBg[accent]}`}>
-          <span className="font-pixel text-[10px] leading-relaxed">{title}</span>
-          <span aria-hidden className="flex gap-1">
-            <i className="block w-2 h-2 bg-current opacity-80" />
-            <i className="block w-2 h-2 bg-current opacity-60" />
-            <i className="block w-2 h-2 bg-current opacity-40" />
-          </span>
+    <div className={`cam-frame ${className}`}>
+      {label && (
+        <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-edge bg-panel2 font-retro text-lg uppercase tracking-wider">
+          <span className="text-ink">{label}</span>
+          <span className="flex items-center gap-2 text-muted">{right ?? <RecDot />}</span>
         </div>
       )}
       <div className={bodyClassName}>{children}</div>
@@ -75,33 +68,39 @@ export function Panel({
   );
 }
 
-export function PixelButton({
+type Variant = "primary" | "ghost" | "danger";
+const variants: Record<Variant, string> = {
+  primary: "bg-ink text-bg border-ink hover:bg-rec hover:border-rec hover:text-white",
+  ghost: "bg-transparent text-ink hover:bg-panel2 hover:border-ink",
+  danger: "bg-rec text-white border-rec hover:bg-[#d82828]",
+};
+
+export function CamButton({
   children,
   href,
   onClick,
-  accent,
+  variant = "ghost",
   external,
   download,
   type = "button",
   disabled,
   ariaLabel,
+  ariaPressed,
   className = "",
 }: {
   children: ReactNode;
   href?: string;
   onClick?: () => void;
-  accent?: Accent;
+  variant?: Variant;
   external?: boolean;
   download?: boolean;
   type?: "button" | "submit";
   disabled?: boolean;
   ariaLabel?: string;
+  ariaPressed?: boolean;
   className?: string;
 }) {
-  const cls = `pixel-btn inline-flex items-center justify-center gap-2 px-4 py-3 text-[10px] leading-none ${
-    accent ? accentBg[accent] : "bg-panel text-ink"
-  } ${className}`;
-
+  const cls = `cam-btn inline-flex items-center justify-center gap-2 px-4 py-2 text-xl leading-none ${variants[variant]} ${className}`;
   if (href) {
     return (
       <a
@@ -116,19 +115,15 @@ export function PixelButton({
     );
   }
   return (
-    <button type={type} onClick={onClick} disabled={disabled} aria-label={ariaLabel} className={cls}>
+    <button type={type} onClick={onClick} disabled={disabled} aria-label={ariaLabel} aria-pressed={ariaPressed} className={cls}>
       {children}
     </button>
   );
 }
 
-export function Tag({ children, accent }: { children: ReactNode; accent?: Accent }) {
+export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span
-      className={`inline-block font-retro text-lg leading-none px-2 py-1 border-2 border-edge ${
-        accent ? accentBg[accent] : "bg-panel2 text-ink"
-      }`}
-    >
+    <span className="inline-block font-retro text-lg leading-none px-2 py-1 border border-edge text-muted uppercase">
       {children}
     </span>
   );

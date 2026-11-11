@@ -1,8 +1,8 @@
 "use client";
 
 import { projects } from "@/data/projects";
-import { Github, ExternalLink, Lock, Clock } from "lucide-react";
-import { Section, SectionHeader, Panel, PixelButton, Tag, ACCENT_CYCLE, accentBg } from "./arcade/ui";
+import { Github, ExternalLink, Lock, WifiOff } from "lucide-react";
+import { Section, SectionHeader, CamButton, Tag, RecDot } from "./night/ui";
 import { useApp } from "@/context/AppContext";
 
 export default function Projects() {
@@ -11,45 +11,46 @@ export default function Projects() {
 
   return (
     <Section id="projects">
-      <SectionHeader level={t("projects.level")} title={t("projects.title")} subtitle={t("projects.subtitle")} accent="pink" />
+      <SectionHeader cam={t("projects.level")} room={t("rooms.projects")} title={t("projects.title")} subtitle={t("projects.subtitle")} />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, idx) => {
-          const accent = ACCENT_CYCLE[idx % ACCENT_CYCLE.length];
           const title = translated[idx]?.title || project.title;
           const description = translated[idx]?.description || project.description;
-          const stage = String(idx + 1).padStart(2, "0");
+          const feedId = `${t("projects.stage")}-${String.fromCharCode(65 + idx)}`;
+          const live = !!project.demo;
 
           return (
-            <Panel
-              key={project.title}
-              accent={accent}
-              title={`${t("projects.stage")} ${stage}`}
-              className="flex flex-col"
-              bodyClassName="flex flex-col flex-1"
-            >
-              {/* "Pantalla" del proyecto */}
-              <div className="relative aspect-[16/7] bg-screen scanlines border-b-4 border-edge flex items-center justify-center overflow-hidden">
+            <article key={project.title} className="cam-frame flex flex-col">
+              {/* Toma de cámara del proyecto */}
+              <div className="screen scanlines vignette aspect-[16/8] border-b border-edge">
+                <div aria-hidden className="cam-corners" />
                 <div
                   aria-hidden
-                  className="absolute inset-0 opacity-30"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(rgba(255,255,255,.12) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,.12) 2px, transparent 2px)",
-                    backgroundSize: "24px 24px",
-                  }}
+                  className="absolute inset-0"
+                  style={{ background: "radial-gradient(ellipse at 50% 55%, #222b26 0%, #090d0b 60%, #050706 90%)" }}
                 />
-                <span className={`relative font-pixel text-2xl sm:text-3xl px-4 py-3 border-4 border-[#050314] ${accentBg[accent]}`}>
-                  {title.slice(0, 2).toUpperCase()}
-                </span>
-                <span className="absolute top-3 right-3 inline-flex items-center gap-2 font-pixel text-[8px] px-2 py-1.5 bg-[#050314] text-white">
-                  <span className={`block w-2 h-2 ${project.demo ? "bg-mint animate-blink" : "bg-yellow"}`} aria-hidden />
-                  {project.demo ? t("projects.statusLive") : t("projects.statusDev")}
-                </span>
+                <div aria-hidden className={`noise absolute inset-0 overflow-hidden ${live ? "[--noise-opacity:0.14]" : "[--noise-opacity:0.45]"}`} />
+                <div className="absolute inset-0 z-[4] flex flex-col justify-between p-4 font-retro uppercase">
+                  <div className="flex items-center justify-between text-lg">
+                    <span>{feedId}</span>
+                    {live ? (
+                      <span className="flex items-center gap-1.5 text-glow">
+                        <RecDot /> {t("projects.statusLive")}
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-1.5 text-[#ffb000]">
+                        <WifiOff className="w-4 h-4" /> {t("projects.statusDev")}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-4xl sm:text-5xl leading-none text-center vhs-text">{title}</p>
+                  <span className="text-lg text-[#8c9b8f] text-right">{String(idx + 1).padStart(2, "0")}/{String(projects.length).padStart(2, "0")}</span>
+                </div>
               </div>
 
               <div className="flex flex-col flex-1 p-5 sm:p-6">
-                <h3 className="font-pixel text-sm sm:text-base leading-relaxed text-ink">{title}</h3>
+                <h3 className="font-retro text-3xl uppercase leading-none text-ink">{title}</h3>
                 <p className="mt-3 text-muted leading-relaxed">{description}</p>
 
                 <div className="flex flex-wrap gap-2 mt-5">
@@ -60,24 +61,24 @@ export default function Projects() {
 
                 <div className="flex flex-wrap gap-3 mt-auto pt-6">
                   {project.github ? (
-                    <PixelButton href={project.github} external accent="dark">
+                    <CamButton href={project.github} external variant="primary">
                       <Github className="w-4 h-4" />
                       {t("projects.btnCode")}
-                    </PixelButton>
+                    </CamButton>
                   ) : (
-                    <DisabledChip icon={<Lock className="w-3.5 h-3.5" />}>{t("projects.codePrivate")}</DisabledChip>
+                    <DisabledChip icon={<Lock className="w-4 h-4" />}>{t("projects.codePrivate")}</DisabledChip>
                   )}
                   {project.demo ? (
-                    <PixelButton href={project.demo} external accent={accent}>
+                    <CamButton href={project.demo} external>
                       {t("projects.btnDemo")}
                       <ExternalLink className="w-4 h-4" />
-                    </PixelButton>
+                    </CamButton>
                   ) : (
-                    <DisabledChip icon={<Clock className="w-3.5 h-3.5" />}>{t("projects.demoSoon")}</DisabledChip>
+                    <DisabledChip icon={<WifiOff className="w-4 h-4" />}>{t("projects.demoSoon")}</DisabledChip>
                   )}
                 </div>
               </div>
-            </Panel>
+            </article>
           );
         })}
       </div>
@@ -87,7 +88,7 @@ export default function Projects() {
 
 function DisabledChip({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 px-4 py-3 font-pixel text-[9px] text-muted border-4 border-dashed border-edge cursor-not-allowed">
+    <span className="inline-flex items-center gap-2 px-4 py-2 font-retro text-xl uppercase text-muted border border-dashed border-edge cursor-not-allowed">
       {icon}
       {children}
     </span>

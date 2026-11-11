@@ -1,7 +1,7 @@
 "use client";
 
 import { Terminal, Bot, Code2, Box, Layers, Cloud } from "lucide-react";
-import { Section, SectionHeader, ACCENT_CYCLE, accentBg } from "./arcade/ui";
+import { Section, SectionHeader } from "./night/ui";
 import { useApp } from "@/context/AppContext";
 
 type Lang = { name: string; category: string; description: string; level: string };
@@ -17,42 +17,39 @@ export default function ExtraSection() {
 
   return (
     <Section id="workspace">
-      <SectionHeader level={t("extra.level")} title={t("extra.title")} subtitle={t("extra.subtitle")} accent="orange" />
+      <SectionHeader cam={t("extra.level")} room={t("rooms.workspace")} title={t("extra.title")} subtitle={t("extra.subtitle")} />
 
-      <h3 className="font-pixel text-xs sm:text-sm text-ink mb-6">{t("extra.sub1Title")}</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-14">
-        {langs.map((item, idx) => {
-          const code = LANG_CODES[idx];
-          const accent = ACCENT_CYCLE[idx % ACCENT_CYCLE.length];
-          return (
-            <article key={item.name} className="pixel-panel p-5 flex flex-col">
-              <div className="flex items-center justify-between">
-                <span className={`w-11 h-11 flex items-center justify-center font-pixel text-[9px] border-4 border-edge ${accentBg[accent]}`}>
-                  {code}
-                </span>
-                <span className="font-retro text-lg px-2 border-2 border-edge bg-panel2 text-ink">{item.level}</span>
-              </div>
-              <h4 className="mt-4 font-pixel text-[10px] leading-relaxed text-ink">{item.name}</h4>
-              <p className="mt-1 font-retro text-lg text-pink leading-tight">{item.category}</p>
-              <p className="mt-2 text-sm text-muted leading-relaxed">{item.description}</p>
-            </article>
-          );
-        })}
+      <h3 className="font-retro text-3xl uppercase text-ink mb-5">{t("extra.sub1Title")}</h3>
+      {/* Lenguajes como unidades de un rack de servidores */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-14">
+        {langs.map((item, idx) => (
+          <article key={item.name} className="cam-frame p-5 flex flex-col">
+            <div className="flex items-center justify-between font-retro text-lg uppercase">
+              <span className="flex items-center gap-2 text-ink">
+                <span aria-hidden className="block w-2 h-2 bg-phos" />
+                U{String(idx + 1).padStart(2, "0")} · {LANG_CODES[idx]}
+              </span>
+              <span className="text-muted">{item.level}</span>
+            </div>
+            <h4 className="mt-3 font-retro text-2xl uppercase leading-none text-ink">{item.name}</h4>
+            <p className="mt-1 text-sm text-rec">{item.category}</p>
+            <p className="mt-2 text-sm text-muted leading-relaxed">{item.description}</p>
+          </article>
+        ))}
       </div>
 
-      <h3 className="font-pixel text-xs sm:text-sm text-ink mb-6">{t("extra.sub2Title")}</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <h3 className="font-retro text-3xl uppercase text-ink mb-5">{t("extra.sub2Title")}</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {tools.map((tool, idx) => {
           const Icon = TOOL_ICONS[idx] ?? Terminal;
-          const accent = ACCENT_CYCLE[(idx + 2) % ACCENT_CYCLE.length];
           return (
-            <article key={tool.name} className="pixel-panel p-5 flex gap-4">
-              <span className={`shrink-0 w-12 h-12 flex items-center justify-center border-4 border-edge ${accentBg[accent]}`}>
+            <article key={tool.name} className="cam-frame p-5 flex gap-4">
+              <span className="shrink-0 w-11 h-11 flex items-center justify-center border border-edge bg-panel2 text-ink">
                 <Icon className="w-5 h-5" />
               </span>
               <div>
-                <h4 className="font-pixel text-[10px] leading-relaxed text-ink">{tool.name}</h4>
-                <p className="font-retro text-lg text-pink leading-tight">{tool.category}</p>
+                <h4 className="font-retro text-2xl uppercase leading-none text-ink">{tool.name}</h4>
+                <p className="mt-1 text-sm text-rec">{tool.category}</p>
                 <p className="mt-1 text-sm text-muted leading-relaxed">{tool.description}</p>
               </div>
             </article>

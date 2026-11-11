@@ -1,63 +1,61 @@
 "use client";
 
 import { Download, MapPin } from "lucide-react";
-import PixelAvatar from "./arcade/PixelAvatar";
-import ArcadeGame from "./arcade/ArcadeGame";
-import { PixelButton } from "./arcade/ui";
+import NightShiftGame from "./night/NightShiftGame";
+import ProfilePhoto from "./night/ProfilePhoto";
+import { CamButton } from "./night/ui";
 import { useApp } from "@/context/AppContext";
 
 export default function Hero() {
   const { t } = useApp();
 
   return (
-    <section id="inicio" className="pt-8 pb-16 sm:pt-14 sm:pb-24">
+    <section id="inicio" className="pt-8 pb-16 sm:pt-12 sm:pb-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Presentación */}
+          {/* Credencial del guardia */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="font-pixel text-[10px] px-3 py-2 bg-yellow text-[#241b4b] border-4 border-edge">
-                {t("hero.player")}
-              </span>
-              <span className="inline-flex items-center gap-2 font-retro text-xl text-ink">
-                <span className="block w-3 h-3 bg-mint border-2 border-edge animate-blink" aria-hidden />
-                {t("hero.status")}
-              </span>
-            </div>
+            <p className="flex items-center gap-2 font-retro text-xl text-muted uppercase tracking-wider">
+              <span aria-hidden className="block w-2.5 h-2.5 bg-phos" />
+              {t("hero.status")}
+            </p>
 
             <div className="flex items-end gap-5">
-              <div className="shrink-0 flex items-end justify-center w-24 h-28 sm:w-28 sm:h-32 bg-sky border-4 border-edge shadow-[6px_6px_0_0_var(--edge)]">
-                <PixelAvatar className="w-16 h-[76px] sm:w-20 sm:h-[94px]" title={t("hero.avatarAlt")} />
+              <div className="shrink-0">
+                <p className="font-retro text-base text-muted uppercase mb-1">{t("hero.badge")}</p>
+                <ProfilePhoto alt={t("hero.photoAlt")} noPhotoLabel={t("hero.noPhoto")} className="w-24 h-28 sm:w-28 sm:h-32" />
               </div>
-              <h1 className="font-pixel leading-snug text-ink">
-                <span className="block text-xs sm:text-sm text-muted mb-3">{t("hero.greeting")}</span>
-                <span className="block text-2xl sm:text-4xl text-pink">{t("hero.name")}</span>
+              <h1>
+                <span className="block text-muted text-lg">{t("hero.greeting")}</span>
+                <span className="block font-retro text-5xl sm:text-7xl leading-none tracking-wide text-ink vhs-text animate-flicker">
+                  {t("hero.name")}
+                </span>
               </h1>
             </div>
 
-            <p className="font-pixel text-[11px] sm:text-xs leading-relaxed text-ink">{t("hero.role")}</p>
+            <p className="font-retro text-2xl leading-tight text-ink uppercase">{t("hero.role")}</p>
 
-            <p className="text-lg text-muted leading-relaxed border-l-4 border-violet pl-4">{t("hero.tagline")}</p>
+            <p className="text-lg text-muted leading-relaxed border-l-2 border-rec pl-4">{t("hero.tagline")}</p>
 
-            <p className="inline-flex items-center gap-2 font-retro text-xl text-ink px-3 py-1 bg-panel border-2 border-edge">
-              <MapPin className="w-4 h-4 text-pink" />
+            <p className="inline-flex items-center gap-2 font-retro text-xl text-ink uppercase">
+              <MapPin className="w-4 h-4 text-rec" />
               {t("hero.location")}
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <PixelButton href="/cv.pdf" download accent="yellow" className="px-5 py-4">
-                <Download className="w-4 h-4" />
+            <div className="flex flex-wrap gap-3 pt-1">
+              <CamButton href="/cv.pdf" download variant="primary" className="px-5 py-3 text-2xl">
+                <Download className="w-5 h-5" />
                 {t("hero.downloadCv")}
-              </PixelButton>
-              <PixelButton href="#projects" className="px-5 py-4">
+              </CamButton>
+              <CamButton href="#projects" className="px-5 py-3 text-2xl">
                 {t("hero.viewProjects")} ▼
-              </PixelButton>
+              </CamButton>
             </div>
           </div>
 
           {/* Mini juego */}
           <div className="lg:col-span-7">
-            <ArcadeGame />
+            <NightShiftGame />
           </div>
         </div>
       </div>
