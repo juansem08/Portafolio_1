@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Download, Code2, Sparkles, Database, Languages } from "lucide-react";
+import { Download, Code2, Sparkles, Database, Languages, Mail } from "lucide-react";
 import { Tape, BadgeClip, Pushpin, MarkerScratch, Barcode } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
 
@@ -164,6 +164,15 @@ export default function Hero() {
                 <span>{t("hero.downloadCv")}</span>
                 {/* Realistic peel corner */}
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-white/80 rotate-45 pointer-events-none" />
+              </a>
+
+              {/* Botón secundario (guía): Contacto */}
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-5 py-3.5 bg-[#FAF9F5] dark:bg-[#1B1717] hover:bg-[#EDEBDD] dark:hover:bg-[#262121] text-[#1B1717] dark:text-[#EDEBDD] font-mono font-bold text-xs uppercase tracking-wider border-2 border-[#1B1717] dark:border-[#810100] shadow-[4px_4px_0px_#1B1717] dark:shadow-[4px_4px_0px_#810100] rotate-1 hover:rotate-0 transition-all active:scale-95"
+              >
+                <Mail className="w-4 h-4 text-[#810100] dark:text-[#ff4444]" />
+                <span>{t("hero.contactBtn")}</span>
               </a>
             </div>
           </div>

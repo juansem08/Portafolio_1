@@ -12,7 +12,7 @@ export interface Certificate {
   verifyUrl?: string;
 }
 
-// "Los demás certificados": cursos complementarios y participaciones fuera de la formación principal.
+// "Los demás certificados": cursos complementarios fuera de la formación principal.
 export const certificates: Certificate[] = [
   {
     title: { es: "Manejo de Productos Químicos", en: "Chemical Products Handling" },
@@ -40,10 +40,5 @@ export const certificates: Certificate[] = [
     date: { es: "Julio 2022", en: "July 2022" },
     hours: 48,
     verifyUrl: "https://certificados.sena.edu.co",
-  },
-  {
-    title: { es: "Seminario de Software (4 ediciones)", en: "Software Seminar (4 editions)" },
-    issuer: { es: "Universidad Cooperativa de Colombia", en: "Universidad Cooperativa de Colombia" },
-    date: { es: "Asistencia", en: "Attendance" },
   },
 ];

@@ -4,9 +4,10 @@ import Image from "next/image";
 import { MapPin, Sparkles, Utensils, Music, GraduationCap, Layers } from "lucide-react";
 import { Tape, Paperclip, Pushpin } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
+import { skillGroups } from "@/data/skills";
 
 export default function About() {
-  const { t } = useApp();
+  const { t, lang } = useApp();
 
   const quickFacts = {
     location: t("about.postitLocationCity"),
@@ -17,13 +18,6 @@ export default function About() {
       "Música Tropical",
       "Arte",
       "Vida Social",
-    ],
-    languages: [
-      "Java (Spring Boot)",
-      "TypeScript (Next.js)",
-      "Python (FastAPI)",
-      "JavaScript (Node.js)",
-      "SQL (PostgreSQL)",
     ],
   };
 
@@ -187,24 +181,6 @@ export default function About() {
                   ))}
                 </div>
 
-                {/* Core Languages Stamps */}
-                <div className="mt-4 pt-3 border-t border-[#1B1717]/20 dark:border-[#EDEBDD]/20">
-                  <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#810100] font-black uppercase mb-2">
-                    <Sparkles className="w-3 h-3 text-[#810100]" />
-                    <span>{t("about.coreStackTitle")}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {quickFacts.languages.map((lang) => (
-                      <span
-                        key={lang}
-                        className="px-2 py-0.5 bg-[#FAF9F5] dark:bg-[#121010] border border-[#1B1717] dark:border-[#810100] font-mono text-[10px] font-bold text-[#1B1717] dark:text-[#EDEBDD] shadow-[2px_2px_0px_#1B1717] dark:shadow-[2px_2px_0px_#810100]"
-                      >
-                        {lang}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
                 {/* Technical Philosophy Quote */}
                 <div className="mt-5 p-3.5 bg-[#EDEBDD] dark:bg-[#121010] border border-[#1B1717]/30 dark:border-[#810100] rounded font-mono text-xs text-[#1B1717] dark:text-[#EDEBDD] space-y-1">
                   <div className="flex items-center gap-2 text-[#810100] font-bold">
@@ -220,6 +196,41 @@ export default function About() {
 
           </div>
 
+        </div>
+
+        {/* Habilidades / tecnologías que manejo (guía: parte de "Acerca de mí") */}
+        <div id="skills" className="mt-14">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-3 h-3 bg-[#810100] rounded-sm" />
+            <h3 className="font-display font-black text-xl sm:text-2xl text-[#1B1717] dark:text-[#EDEBDD] tracking-tight uppercase">
+              {t("about.skillsTitle")}
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {skillGroups.map((group, idx) => (
+              <div
+                key={group.title.es}
+                className={`p-5 bg-[#FAF9F5] dark:bg-[#1E1B18] border-2 border-[#1B1717] dark:border-[#810100] rounded shadow-[5px_5px_0px_#1B1717] dark:shadow-[5px_5px_0px_#810100] ${
+                  idx % 2 === 0 ? "-rotate-1" : "rotate-1"
+                } hover:rotate-0 transition-transform`}
+              >
+                <p className="flex items-center gap-1.5 text-[11px] font-mono text-[#810100] dark:text-[#E8927C] font-black uppercase tracking-wider mb-3">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  {group.title[lang]}
+                </p>
+                <ul className="flex flex-wrap gap-1.5">
+                  {group.items.map((item) => (
+                    <li
+                      key={item}
+                      className="px-2 py-0.5 bg-[#EDEBDD] dark:bg-[#121010] border border-[#1B1717] dark:border-[#810100] font-mono text-[11px] font-bold text-[#1B1717] dark:text-[#EDEBDD] shadow-[2px_2px_0px_#1B1717] dark:shadow-[2px_2px_0px_#810100]"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

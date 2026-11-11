@@ -1,18 +1,16 @@
 "use client";
 
-import { Code2, Award, Building2, ArrowDown } from "lucide-react";
+import { Award, Building2, ArrowDown } from "lucide-react";
 import { Tape } from "./ScrapbookAssets";
 import { useApp } from "@/context/AppContext";
-import ExtraSection from "./ExtraSection";
 import Certificates from "./Certificates";
 import CompanyVisits from "./CompanyVisits";
 
-// Sección adicional de la guía: agrupa habilidades técnicas, certificados y visitas empresariales.
+// Sección adicional de la guía (antes del pie de página): certificados y visitas empresariales.
 export default function Additional() {
   const { t } = useApp();
 
   const parts = [
-    { href: "#workspace", icon: Code2, label: t("additional.skills"), desc: t("additional.skillsDesc") },
     { href: "#certificates", icon: Award, label: t("additional.certificates"), desc: t("additional.certificatesDesc") },
     { href: "#visits", icon: Building2, label: t("additional.visits"), desc: t("additional.visitsDesc") },
   ];
@@ -33,7 +31,7 @@ export default function Additional() {
         </div>
 
         {/* Índice de la sección adicional */}
-        <nav aria-label={t("additional.title")} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <nav aria-label={t("additional.title")} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {parts.map(({ href, icon: Icon, label, desc }) => (
             <a
               key={href}
@@ -57,7 +55,6 @@ export default function Additional() {
         </nav>
       </div>
 
-      <ExtraSection />
       <Certificates />
       <CompanyVisits />
     </div>
