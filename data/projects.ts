@@ -43,6 +43,8 @@ export const projects: Project[] = [
     imageFit: "contain",
     imageBg: "linear-gradient(135deg,#FDE3D3,#F7B79A)",
     repos: [{ label: "Código", url: "https://github.com/juansem08/Escaner_Sintetizador_Multimodal_Documentos_conia" }],
+    // APK de Android generado con Expo EAS (enlace del README del repo)
+    download: "https://expo.dev/artifacts/eas/faLiHmuFmPuHr_bk5TnyZcYCEvTA_CAvowQMkp8nWUo.apk",
   },
   {
     title: "Clasificador Automático de Reseñas",
